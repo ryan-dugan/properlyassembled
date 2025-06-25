@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing - Properly Assembled</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .accordion-button svg.chevron {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button.open svg.chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="./index.html" class="flex items-center space-x-2">
+                <!-- SVG Logo -->
+                <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 16v-2m0-8v-2m0 4h.01M6 12H4m16 0h-2m-8 0h.01M12 18h.01M18 12h.01M6 12h.01M12 6h.01M6 18h.01M18 6h.01M6 6h.01M18 18h.01"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14a2 2 0 100-4 2 2 0 000 4z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path></svg>
+                <span class="text-2xl font-bold text-gray-800">Properly Assembled</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="./index.html" class="text-gray-600 hover:text-indigo-600 font-semibold">Home</a>
+                <a href="./services.html" class="text-indigo-600 font-bold">Services & Pricing</a>
+                <a href="./gallery.html" class="block text-gray-600 hover:text-indigo-600 py-2 font-semibold">Gallery</a>
+                <a href="./contact.html" class="text-gray-600 hover:text-indigo-600 font-semibold">Contact</a>
+            </div>
+            <a href="mailto:contact@properlyassembled.com" class="hidden md:block bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
+                Get a Free Quote
+            </a>
+            <button id="mobile-menu-button" class="md:hidden">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="./index.html" class="block text-gray-600 hover:text-indigo-600 py-2 font-semibold">Home</a>
+            <a href="./services.html" class="block text-indigo-600 py-2 font-bold">Services & Pricing</a>
+            <a href="./gallery.html" class="block text-gray-600 hover:text-indigo-600 py-2 font-semibold">Gallery</a>
+            <a href="./contact.html" class="block text-gray-600 hover:text-indigo-600 py-2 font-semibold">Contact</a>
+            <a href="mailto:contact@properlyassembled.com" class="block mt-4 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 text-center">
+                Get a Free Quote
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title Section -->
+        <section class="bg-indigo-700 text-white">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight">Our Services & Transparent Pricing</h1>
+                <p class="text-lg md:text-xl mt-4 text-indigo-200 max-w-3xl mx-auto">Fair, upfront pricing for quality assembly you can trust. No hidden fees.</p>
+            </div>
+        </section>
+        
+        <!-- Most Popular Services Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4">Most Popular Services</h2>
+                <div class="w-24 h-1 bg-indigo-600 mx-auto mb-12"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center border border-gray-200 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">Standard Desk</h3>
+                        <p class="text-4xl font-bold text-indigo-600 mb-2">$50</p>
+                        <p class="text-gray-500">Professional assembly for standard writing desks.</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-lg text-center border border-gray-200 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">Bed Frame</h3>
+                        <p class="text-4xl font-bold text-indigo-600 mb-2">$75+</p>
+                        <p class="text-gray-500">For Twin/Full. Queen/King options available.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center border border-gray-200 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">Treadmill</h3>
+                        <p class="text-4xl font-bold text-indigo-600 mb-2">$125</p>
+                        <p class="text-gray-500">Medium-sized fitness equipment assembly.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center border border-gray-200 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-bold mb-2">Large Dresser</h3>
+                        <p class="text-4xl font-bold text-indigo-600 mb-2">$100</p>
+                        <p class="text-gray-500">For dressers with 4 or more drawers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Accordion -->
+        <section class="py-20 bg-indigo-50">
+            <div class="container mx-auto px-6 max-w-4xl">
+                 <h2 class="text-3xl font-bold text-center mb-12">Complete Service & Price List</h2>
+                <div id="accordion-container" class="space-y-4">
+
+                    <!-- Service Category 1: Furniture Assembly -->
+                    <div class="border rounded-lg bg-white shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl">
+                            <span class="flex items-center space-x-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M21.001 4h-18a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 14h-16V6h16zM5 8h6v2H5zm0 4h6v2H5z"></path></svg>
+                                <span>Furniture Assembly</span>
+                            </span>
+                            <svg class="w-6 h-6 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t text-gray-700">
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Desks</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Standard (Writing desks): $50</li><li>Standing or L-shaped: $75</li><li>Executive or complex setups: $100</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Chairs & Stools</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Basic (Dining, Bar stools): $25</li><li>Office or Gaming chairs: $50</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Bookshelves & Cabinets</h4>
+                                 <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Small (2–3 shelves or drawers): $50</li><li>Medium (4–6 shelves or drawers): $100</li><li>Large (Wall units, complex storage): $150</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Dressers & Nightstands</h4>
+                                 <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Nightstands: $40</li><li>Small Dressers (≤3 drawers): $60</li><li>Large Dressers (4+ drawers): $100</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Shelving Units</h4>
+                                 <ul class="list-disc list-inside space-y-1">
+                                    <li>Wall-mounted: $40</li><li>Freestanding: $80</li><li>Modular/custom systems: $120</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 2: Product Assembly -->
+                     <div class="border rounded-lg bg-white shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl">
+                            <span class="flex items-center space-x-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M21.928 9.638a1.002 1.002 0 0 0-.61-.532l-4.168-1.21-1.863-3.784a.998.998 0 0 0-1.784 0L11.64 7.9l-4.168 1.21a1.002 1.002 0 0 0-.61.532.997.997 0 0 0 .193 1.011l3.018 2.942-1.019 4.31a.997.997 0 0 0 .428.988a1 1 0 0 0 1.036.038L12 17.51l3.525 2.01a1 1 0 0 0 1.036-.038a.997.997 0 0 0 .428-.988l-1.02-4.31 3.018-2.942a.997.997 0 0 0 .192-1.011zm-5.41 3.327L15.29 17.5l-2.71-1.545a1.003 1.003 0 0 0-.937 0l-2.71 1.545 1.228-4.536L7.433 10.3l4.52-.001L14.28 6.09l1.18 4.21h4.522l-2.727 2.664z"></path><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path></svg>
+                                <span>Product Assembly</span>
+                            </span>
+                            <svg class="w-6 h-6 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t text-gray-700">
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Fitness Equipment</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Small (Benches, Bikes): $75</li><li>Medium (Treadmills): $125</li><li>Large (Multi-gym systems): $200</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Outdoor Playsets</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4">
+                                     <li>Small (Swings): $100</li><li>Medium (Jungle gyms): $250</li><li>Large (Full playsets): $400</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Grills & Patio Furniture</h4>
+                                 <ul class="list-disc list-inside space-y-1 mb-4">
+                                     <li>Small (Chairs, Side tables): $50</li><li>Medium (Grills, Lounges): $100</li><li>Large (Dining sets, Sectionals): $150</li>
+                                 </ul>
+                                 <h4 class="font-bold text-lg mb-2 text-indigo-700">Game Tables</h4>
+                                  <ul class="list-disc list-inside space-y-1 mb-4">
+                                      <li>Foosball, Air Hockey: $75</li><li>Ping Pong: $150</li><li>Pool Tables: $250</li>
+                                  </ul>
+                                  <h4 class="font-bold text-lg mb-2 text-indigo-700">Basketball Hoops</h4>
+                                   <ul class="list-disc list-inside space-y-1">
+                                      <li>Wall-mounted: $100</li><li>Portable: $200</li><li>In-ground systems: $300</li>
+                                  </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Category 3: Office Setup -->
+                    <div class="border rounded-lg bg-white shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl">
+                            <span class="flex items-center space-x-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h4l-1.8 2.4 1.6 1.2 2.7-3.6h3l2.7 3.6 1.6-1.2L16 18h4c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 16V5h16l.001 11H4z"></path></svg>
+                                <span>Office Setup & Installation</span>
+                            </span>
+                            <svg class="w-6 h-6 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t text-gray-700">
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Desk Setup</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Standard or Ergonomic: $50</li><li>Modular/Corner: $100</li><li>Ergonomic Chairs: $25 – $50</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Conference Tables</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4">
+                                    <li>Small (4–6 seats): $100</li><li>Large (8+ seats, cable management): $300</li>
+                                </ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Cubicle Installation</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4"><li>Custom quote</li></ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Workspace Organization</h4>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>Basic layout/setup: $50</li><li>Full configuration & storage optimization: $150</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 4: Home Furniture Installation -->
+                    <div class="border rounded-lg bg-white shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl">
+                             <span class="flex items-center space-x-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h7v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h7a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1zm-2 7h-3v-3a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v3H4v-6h16v6z"></path><path d="M20 6H4a1 1 0 0 0-1 1v2h18V7a1 1 0 0 0-1-1zM4 4h7V2H4a1 1 0 0 0-1 1v1z"></path></svg>
+                                <span>Home Furniture Installation</span>
+                            </span>
+                            <svg class="w-6 h-6 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t text-gray-700">
+                               <h4 class="font-bold text-lg mb-2 text-indigo-700">Bed Frames</h4>
+                               <ul class="list-disc list-inside space-y-1 mb-4"><li>Twin/Full: $75</li><li>Queen/King: $150</li><li>Bunk/Storage Beds: $200</li></ul>
+                               <h4 class="font-bold text-lg mb-2 text-indigo-700">Wardrobes & Closets</h4>
+                               <ul class="list-disc list-inside space-y-1 mb-4"><li>Freestanding: $100</li><li>Built-in/Modular: $300</li></ul>
+                               <h4 class="font-bold text-lg mb-2 text-indigo-700">Entertainment Centers</h4>
+                               <ul class="list-disc list-inside space-y-1 mb-4"><li>Basic TV Stand: $100</li><li>Large Console/With Fireplace: $150</li><li>Wall-mounted/Custom Units: $175</li></ul>
+                               <h4 class="font-bold text-lg mb-2 text-indigo-700">Dining Sets</h4>
+                               <ul class="list-disc list-inside space-y-1 mb-4"><li>Small (2–4 seats): $100</li><li>Medium (4–6 seats): $175</li><li>Large (8+ seats): $250</li></ul>
+                               <h4 class="font-bold text-lg mb-2 text-indigo-700">Sofas & Recliners</h4>
+                               <ul class="list-disc list-inside space-y-1 mb-4"><li>Loveseats: $75</li><li>Standard/Recliner: $125</li><li>Sectionals/Sleepers: $200</li></ul>
+                               <h4 class="font-bold text-lg mb-2 text-indigo-700">Bookshelves & Storage Units</h4>
+                               <ul class="list-disc list-inside space-y-1"><li>Basic: $50</li><li>Medium: $100</li><li>Custom/Modular: $150</li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 5: Outdoor -->
+                    <div class="border rounded-lg bg-white shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl">
+                            <span class="flex items-center space-x-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v1.282A6.993 6.993 0 0 0 5 15v2H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-1v-2a6.993 6.993 0 0 0-2-6.718V7a5 5 0 0 0 5-5zM9 7a3 3 0 0 1 6 0v1.418A5.023 5.023 0 0 1 13 13a5.023 5.023 0 0 1-2-4.582V7zm10.707 6.293-2.414 2.414-1.414-1.414 2.414-2.414a2.985 2.985 0 0 0 0-4.242 2.985 2.985 0 0 0-4.242 0L12 9.121l-1.414-1.414a2.985 2.985 0 0 0-4.242 0 2.985 2.985 0 0 0 0 4.242l6.121 6.121a.997.997 0 0 0 1.414 0l.707-.707 2.414-2.414a3.02 3.02 0 0 0 .586-1.586A3.014 3.014 0 0 0 19.707 13.293z"></path></svg>
+                                <span>Outdoor & Specialty Installations</span>
+                            </span>
+                            <svg class="w-6 h-6 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t text-gray-700">
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Pergolas & Gazebos</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4"><li>Small: $250</li><li>Medium: $500</li><li>Large/Deluxe: $800</li></ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Swings & Hammocks</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4"><li>Basic Hanging Units: $75</li><li>Full Swing Sets or Hammocks: $100 – $200</li></ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Garden Sheds</h4>
+                                <ul class="list-disc list-inside space-y-1 mb-4"><li>Small (≤6x6 ft): $200</li><li>Medium (6x8 – 8x10 ft): $400</li><li>Large (10x12+ ft): $600</li></ul>
+                                <h4 class="font-bold text-lg mb-2 text-indigo-700">Bike Racks & Storage</h4>
+                                <ul class="list-disc list-inside space-y-1"><li>Wall-mounted or Tool Racks: $50</li><li>Freestanding Systems: $100 – $150</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Category 6: Custom Solutions -->
+                    <div class="border rounded-lg bg-white shadow-sm">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl">
+                            <span class="flex items-center space-x-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-indigo-500" viewBox="0 0 24 24" fill="currentColor"><path d="m21.447 11.105-9-8c-.29-.26-.704-.26-.998 0l-9 8A.998.998 0 0 0 2 12h1v8c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-8h1a.998.998 0 0 0 .447-.895zM12 4.43l7 6.222V12H5v-1.348l7-6.222zM19 20H5v-6h14v6z"></path><path d="M11 17h2v-3h3v-2h-3v-3h-2v3H8v2h3z"></path></svg>
+                                <span>Custom Assembly Solutions</span>
+                            </span>
+                            <svg class="w-6 h-6 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 border-t text-gray-700">
+                               <p>For specialized furniture, large-scale projects, or custom builds, please contact us directly for a personalized quote tailored to your specific needs.</p>
+                               <ul class="list-disc list-inside space-y-1 mt-4">
+                                   <li>Specialized Furniture Assembly: Custom pricing</li>
+                                   <li>Large-Scale Installations: Custom pricing</li>
+                                   <li>On-Site Modifications or Adjustments: Custom pricing</li>
+                                   <li>Design-Based Custom Builds: Custom pricing</li>
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Notes Section -->
+        <section class="py-20">
+             <div class="container mx-auto px-6 max-w-4xl">
+                 <h2 class="text-3xl font-bold text-center mb-10">Important Information</h2>
+                 <div class="bg-white border border-gray-200 p-8 rounded-lg grid md:grid-cols-2 gap-8">
+                     <div class="bg-indigo-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-800">Pricing Flexibility</h4>
+                        <p class="text-gray-600 mt-2">Rates may be adjusted based on the size, complexity, and location of the project. Large or long-term projects may qualify for special pricing.</p>
+                     </div>
+                      <div class="bg-indigo-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-800">Warranty & Quality</h4>
+                        <p class="text-gray-600 mt-2">All assemblies come with a quality check to ensure proper setup and stability. Post-assembly support is available upon request.</p>
+                     </div>
+                      <div class="bg-indigo-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-800">Bulk & Repeat Discounts</h4>
+                        <p class="text-gray-600 mt-2">Special pricing is available for bulk assembly projects and repeat customers.</p>
+                     </div>
+                      <div class="bg-indigo-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-800">Scheduling</h4>
+                        <p class="text-gray-600 mt-2">Services are available by appointment, with flexible scheduling including weekends and evenings for your convenience.</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Properly Assembled</h3>
+                    <p class="text-gray-400">Your trusted expert for all assembly and installation needs in North Carolina.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="./index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li class="mb-2"><a href="./services.html" class="text-gray-400 hover:text-white">Services & Pricing</a></li>
+                        <li class="mb-2"><a href="./gallery.html" class="text-gray-400 hover:text-white">Gallery</a></li>
+                        <li class="mb-2"><a href="./contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <p class="text-gray-400 mb-2"><strong>Location:</strong> North Carolina</p>
+                    <p class="text-gray-400 mb-2"><strong>Phone:</strong> <a href="tel:3369714867" class="hover:text-white">336-971-4867</a></p>
+                    <p class="text-gray-400"><strong>Email:</strong> <a href="mailto:contact@properlyassembled.com" class="hover:text-white">contact@properlyassembled.com</a></p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 Properly Assembled. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for accordion functionality
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const wasOpen = button.classList.contains('open');
+
+                // Close all accordions
+                accordionButtons.forEach(otherButton => {
+                    otherButton.classList.remove('open');
+                    otherButton.nextElementSibling.style.maxHeight = null;
+                });
+
+                // If the clicked one wasn't already open, open it
+                if (!wasOpen) {
+                    button.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
