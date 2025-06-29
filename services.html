@@ -55,6 +55,25 @@
             opacity: 1;
             margin-left: 1rem;
         }
+
+        /* Animation for highlighting a card */
+        @keyframes pop-highlight {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+            }
+        }
+        .highlight-pop {
+            animation: pop-highlight 1.2s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-400">
@@ -118,10 +137,10 @@
                     </div>
                     </a>
                     <!-- Card 2 -->
-                    <a href="#product-assembly-section" class="popular-service-link" data-target-card="#treadmill-card">
+                    <a href="#product-assembly-section" class="popular-service-link" data-target-card="#fitness-equipment-card">
                     <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
                         <h3 class="text-xl font-bold mb-2 text-slate-800">Treadmill</h3>
-                        <p class="text-4xl font-bold text-sky-400 mb-2">$150</p>
+                        <p class="text-4xl font-bold text-sky-400 mb-2">$125</p>
                         <p class="text-slate-600">Medium-sized fitness equipment assembly.</p>
                     </div>
                     </a>
@@ -171,10 +190,10 @@
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
                                     <div id="desk-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Desks</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Standard (Writing): $50</li><li>Standing or L-shaped: $75</li><li>Executive / Complex: $100</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Chairs & Stools</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic (Dining, Stools): $25</li><li>Office or Gaming: $50</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bookshelves & Cabinets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (2–3 shelves): $50</li><li>Medium (4–6 shelves): $100</li><li>Large (Wall units): $150</li></ul></div>
+                                    <div id="chair-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Chairs & Stools</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic (Dining, Stools): $25</li><li>Office or Gaming: $50</li></ul></div>
+                                    <div id="bookshelf-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bookshelves & Cabinets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (2–3 shelves): $50</li><li>Medium (4–6 shelves): $100</li><li>Large (Wall units): $150</li></ul></div>
                                     <div id="dresser-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Dressers & Nightstands</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Nightstands: $40</li><li>Small Dressers (≤3 dr.): $60</li><li>Large Dressers (4+ dr.): $100</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Shelving Units</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted: $40</li><li>Freestanding: $80</li><li>Modular Systems: $120</li></ul></div>
+                                    <div id="shelving-unit-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Shelving Units</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted: $40</li><li>Freestanding: $80</li><li>Modular Systems: $120</li></ul></div>
                                 </div>
                             </div>
                         </div>
@@ -193,9 +212,11 @@
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
-                                    <div id="treadmill-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Fitness Equipment</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Treadmills/Ellipticals: $150</li><li>Home Gyms/Weight Racks: $200</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Sporting Goods</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basketball Hoops: $125</li><li>Ping Pong Tables: $100</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Outdoor Gear</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Grills & Smokers: $75</li><li>Patio Heaters: $50</li></ul></div>
+                                    <div id="fitness-equipment-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Fitness Equipment</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (Benches, Bikes): $75</li><li>Medium (Treadmills): $125</li><li>Large (Multi-gym systems): $200</li></ul></div>
+                                    <div id="playsets-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Outdoor Playsets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (Swings): $100</li><li>Medium (Jungle gyms): $250</li><li>Large (Full playsets): $400</li></ul></div>
+                                    <div id="grills-patio-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Grills &amp; Patio Furniture</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (Chairs, Side tables): $50</li><li>Medium (Grills, Lounges): $100</li><li>Large (Dining sets, Sectionals): $150</li></ul></div>
+                                    <div id="game-tables-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Game Tables</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Foosball, Air Hockey: $75</li><li>Ping Pong: $150</li><li>Pool Tables: $250</li></ul></div>
+                                    <div id="basketball-hoop-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Basketball Hoops</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted: $100</li><li>Portable: $200</li><li>In-ground systems: $300</li></ul></div>
                                 </div>
                             </div>
                         </div>
@@ -214,10 +235,10 @@
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Desk Setup</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Standard or Ergonomic: $50</li><li>Modular/Corner: $100</li><li>Ergonomic Chairs: $25 – $50</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Conference Tables</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (4–6 seats): $100</li><li>Large (8+ seats): $300</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Workspace</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic layout/setup: $50</li><li>Full configuration: $150</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Cubicle Installation</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Custom quote</li></ul></div>
+                                    <div id="desk-setup-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Desk Setup</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Standard or Ergonomic: $50</li><li>Modular/Corner: $100</li><li>Ergonomic Chairs: $25 – $50</li></ul></div>
+                                    <div id="conference-table-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Conference Tables</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (4–6 seats): $100</li><li>Large (8+ seats): $300</li></ul></div>
+                                    <div id="workspace-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Workspace</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic layout/setup: $50</li><li>Full configuration: $150</li></ul></div>
+                                    <div id="cubicle-installation-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Cubicle Installation</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Custom quote</li></ul></div>
                                 </div>
                             </div>
                         </div>
@@ -237,11 +258,11 @@
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
                                     <div id="bed-frame-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bed Frames</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Twin/Full: $75</li><li>Queen/King: $150</li><li>Bunk/Storage Beds: $200</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Wardrobes & Closets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Freestanding: $100</li><li>Built-in/Modular: $300</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Entertainment Centers</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic TV Stand: $100</li><li>Large Console: $150</li><li>Wall-mounted Units: $175</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Dining Sets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (2–4 seats): $100</li><li>Medium (4–6 seats): $175</li><li>Large (8+ seats): $250</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Sofas & Recliners</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Loveseats: $75</li><li>Standard/Recliner: $125</li><li>Sectionals/Sleepers: $200</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bookshelves & Storage</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic: $50</li><li>Medium: $100</li><li>Custom/Modular: $150</li></ul></div>
+                                    <div id="wardrobe-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Wardrobes & Closets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Freestanding: $100</li><li>Built-in/Modular: $300</li></ul></div>
+                                    <div id="entertainment-center-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Entertainment Centers</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic TV Stand: $100</li><li>Large Console: $150</li><li>Wall-mounted Units: $175</li></ul></div>
+                                    <div id="dining-set-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Dining Sets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (2–4 seats): $100</li><li>Medium (4–6 seats): $175</li><li>Large (8+ seats): $250</li></ul></div>
+                                    <div id="sofa-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Sofas & Recliners</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Loveseats: $75</li><li>Standard/Recliner: $125</li><li>Sectionals/Sleepers: $200</li></ul></div>
+                                    <div id="home-bookshelf-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bookshelves & Storage</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic: $50</li><li>Medium: $100</li><li>Custom/Modular: $150</li></ul></div>
                                 </div>
                             </div>
                         </div>
@@ -260,10 +281,10 @@
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Pergolas & Gazebos</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small: $250</li><li>Medium: $500</li><li>Large/Deluxe: $800</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Swings & Hammocks</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Hanging Units: $75</li><li>Full Swing Sets: $100 – $200</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Garden Sheds</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (≤6x6 ft): $200</li><li>Medium (6x8–8x10 ft): $400</li><li>Large (10x12+ ft): $600</li></ul></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bike Racks & Storage</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted Racks: $50</li><li>Freestanding Systems: $100+</li></ul></div>
+                                    <div id="pergolas-gazebos-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Pergolas & Gazebos</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small: $250</li><li>Medium: $500</li><li>Large/Deluxe: $800</li></ul></div>
+                                    <div id="swings-hammocks-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Swings & Hammocks</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Hanging Units: $75</li><li>Full Swing Sets: $100 – $200</li></ul></div>
+                                    <div id="garden-sheds-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Garden Sheds</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (≤6x6 ft): $200</li><li>Medium (6x8–8x10 ft): $400</li><li>Large (10x12+ ft): $600</li></ul></div>
+                                    <div id="bike-racks-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bike Racks & Storage</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted Racks: $50</li><li>Freestanding Systems: $100+</li></ul></div>
                                 </div>
                             </div>
                         </div>
@@ -282,10 +303,10 @@
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Specialized Furniture</h4><p class="text-slate-700">Assembly for custom, antique, or highly complex pieces.</p></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Large-Scale Installations</h4><p class="text-slate-700">Full office setups, commercial displays, or multi-unit residential projects.</p></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">On-Site Modifications</h4><p class="text-slate-700">Custom adjustments, hardware changes, or stability enhancements.</p></div>
-                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Design-Based Builds</h4><p class="text-slate-700">Working from custom plans or designs to assemble unique items.</p></div>
+                                    <div id="specialized-furniture-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Specialized Furniture</h4><p class="text-slate-700">Assembly for custom, antique, or highly complex pieces.</p></div>
+                                    <div id="large-scale-installations-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Large-Scale Installations</h4><p class="text-slate-700">Full office setups, commercial displays, or multi-unit residential projects.</p></div>
+                                    <div id="on-site-modifications-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">On-Site Modifications</h4><p class="text-slate-700">Custom adjustments, hardware changes, or stability enhancements.</p></div>
+                                    <div id="design-based-builds-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Design-Based Builds</h4><p class="text-slate-700">Working from custom plans or designs to assemble unique items.</p></div>
                                 </div>
                             </div>
                         </div>
@@ -448,49 +469,62 @@
                 }, videoInterval);
             }
 
+            function handleLink(targetSectionId, targetCardId) {
+                const targetSection = document.getElementById(targetSectionId);
+                if (!targetSection) return;
+
+                // Scroll to the section
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                const accordionButton = targetSection.querySelector('.accordion-button');
+                if (accordionButton) {
+                    setTimeout(() => {
+                        if (accordionButton.getAttribute('aria-expanded') === 'false') {
+                            toggleAccordion(accordionButton);
+                        }
+
+                        setTimeout(() => {
+                            if (targetCardId) {
+                                const targetCard = document.getElementById(targetCardId);
+                                if (targetCard) {
+                                    targetCard.classList.add('highlight-pop');
+                                    setTimeout(() => {
+                                        targetCard.classList.remove('highlight-pop');
+                                    }, 1200);
+                                }
+                            }
+                        }, 500); // Wait for accordion animation
+                    }, 500); // Wait for scroll
+                }
+            }
+
+            // Handle hash on page load
+            function handleHashChange() {
+                if (window.location.hash) {
+                    const hash = window.location.hash.substring(1);
+                    const [sectionId, cardId] = hash.split('&');
+                    if (sectionId) {
+                        handleLink(sectionId, cardId);
+                    }
+                }
+            }
+
             // Add click listeners to popular service links
             popularServiceLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    const targetCardId = this.dataset.targetCard; // Get the target card ID
-
-                    if (targetSection) {
-                        // Scroll to the section
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center' // Center the section in the viewport
-                        });
-
-                        const accordionButton = targetSection.querySelector('.accordion-button');
-                        if (accordionButton) {
-                            // Use a timeout to ensure the scroll has started before opening
-                            setTimeout(() => {
-                                // Only open if it's not already open
-                                if (accordionButton.getAttribute('aria-expanded') === 'false') {
-                                    toggleAccordion(accordionButton);
-                                }
-
-                                // Highlight the corresponding card *after* the accordion has had time to open
-                                setTimeout(() => {
-                                    if (targetCardId) {
-                                        const targetCard = document.querySelector(targetCardId);
-                                        if (targetCard) {
-                                            // Add a class to trigger the animation
-                                            targetCard.classList.add('highlight-pop');
-                                            // Remove the class after the animation duration
-                                            setTimeout(() => {
-                                                targetCard.classList.remove('highlight-pop');
-                                            }, 1200); // Keep highlight for 1.2s
-                                        }
-                                    }
-                                }, 500); // Wait for accordion animation (500ms) to finish
-                            }, 500); // Initial delay to allow for scrolling
-                        }
-                    }
+                    const targetSectionId = this.getAttribute('href').substring(1);
+                    const targetCardId = this.dataset.targetCard.substring(1);
+                    handleLink(targetSectionId, targetCardId);
                 });
             });
+
+            // Listen for hash changes and initial page load
+            window.addEventListener('hashchange', handleHashChange, false);
+            handleHashChange(); // For initial load
         });
     </script>
 </body>
