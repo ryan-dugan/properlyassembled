@@ -31,6 +31,31 @@
             transform: rotate(180deg);
         }
     </style>
+    <style>
+        .accordion-button.open {
+            background-color: #475569; /* Tailwind slate-600 */
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .accordion-description {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 0;
+            opacity: 0;
+            margin-left: 0;
+            font-size: 0.9rem; /* Slightly smaller */
+            font-weight: 400;
+            color: #cbd5e1; /* Lighter color: slate-300 */
+            white-space: nowrap;
+            overflow: hidden;
+            transition: max-width 0.4s ease-in-out, opacity 0.3s ease-in-out 0.1s, margin-left 0.4s ease-in-out;
+        }
+        .accordion-button.open .accordion-description {
+            max-width: 700px; /* Generous max-width to reveal text */
+            opacity: 1;
+            margin-left: 1rem;
+        }
+    </style>
 </head>
 <body class="bg-slate-900 text-slate-400">
 
@@ -81,171 +106,187 @@
                 <h2 class="text-3xl font-bold text-center mb-4 text-slate-200">Most Popular Services</h2>
                 <div class="w-24 h-1 bg-sky-500 mx-auto mb-12"></div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-slate-800 p-6 rounded-lg text-center">
-                        <h3 class="text-xl font-bold mb-2 text-slate-200">Bed Frame</h3>
+                    <!-- Card 1 -->
+                    <a href="#home-furniture-section" class="popular-service-link" data-target-card="#bed-frame-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Bed Frame</h3>
                         <p class="text-4xl font-bold text-sky-400 mb-2">$80</p>
-                        <p class="text-slate-400">Standard bed frame assembly, any size.</p>
+                        <p class="text-slate-600">Standard bed frame assembly, any size.</p>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-lg text-center">
-                        <h3 class="text-xl font-bold mb-2 text-slate-200">Treadmill</h3>
+                    </a>
+                    <!-- Card 2 -->
+                    <a href="#product-assembly-section" class="popular-service-link" data-target-card="#treadmill-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Treadmill</h3>
                         <p class="text-4xl font-bold text-sky-400 mb-2">$125</p>
-                        <p class="text-slate-400">Medium-sized fitness equipment assembly.</p>
+                        <p class="text-slate-600">Medium-sized fitness equipment assembly.</p>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-lg text-center">
-                        <h3 class="text-xl font-bold mb-2 text-slate-200">Large Dresser</h3>
+                    </a>
+                    <!-- Card 3 -->
+                    <a href="#furniture-assembly-section" class="popular-service-link" data-target-card="#dresser-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Large Dresser</h3>
                         <p class="text-4xl font-bold text-sky-400 mb-2">$100</p>
-                        <p class="text-slate-400">For dressers with 4 or more drawers.</p>
+                        <p class="text-slate-600">For dressers with 4 or more drawers.</p>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-lg text-center">
-                        <h3 class="text-xl font-bold mb-2 text-slate-200">Desk</h3>
-                        <p class="text-4xl font-bold text-sky-400 mb-2">$90</p>
-                        <p class="text-slate-400">Standard or L-shaped office desks.</p>
+                    </a>
+                    <!-- Card 4 -->
+                    <a href="#furniture-assembly-section" class="popular-service-link" data-target-card="#desk-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Desk</h3>
+                        <p class="text-4xl font-bold text-sky-400 mb-2">$50-$75</p>
+                        <p class="text-slate-600">Standard or L-shaped office desks.</p>
                     </div>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Services Accordion -->
-        <section class="py-20 bg-slate-800">
-            <div class="container mx-auto px-6 max-w-4xl">
-                 <h2 class="text-3xl font-bold text-center mb-4 text-slate-200">Complete Service & Price List</h2>
+        <section class="relative py-20 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full z-0">
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover video-background active" src="assets/s1.mp4"></video>
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover video-background" src="assets/s2.mp4"></video>
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover video-background" src="assets/s3.mp4"></video>
+                <div class="absolute top-0 left-0 w-full h-full bg-slate-900 opacity-75"></div>
+            </div>
+            <div class="relative z-10 container mx-auto px-6 max-w-6xl">
+                <h2 class="text-3xl font-bold text-center mb-4 text-slate-200">Complete Service & Price List</h2>
                 <p class="text-center text-slate-400 mb-12 max-w-3xl mx-auto">All prices listed are estimates. A final, guaranteed quote will be provided before any work begins. Prices may vary based on item complexity and condition.</p>
-                <div id="accordion-container" class="space-y-4">
-
+                <div id="accordion-services" class="w-full max-w-7xl mx-auto bg-slate-900 rounded-2xl shadow-2xl p-4 md:p-6">
                     <!-- Service Category 1: Furniture Assembly -->
-                    <div class="border border-slate-700 rounded-lg bg-slate-700">
-                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400">
+                    <div id="furniture-assembly-section" class="border border-slate-700 rounded-lg bg-slate-700 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400 bg-slate-700 rounded-lg transition-colors duration-300">
                             <span class="flex items-center">
-                                <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
-                                Furniture Assembly
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 icon icon-tabler icons-tabler-outline icon-tabler-desk"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 6h18" /><path d="M4 6v13" /><path d="M20 19v-13" /><path d="M4 10h16" /><path d="M15 6v8a2 2 0 0 0 2 2h3" /></svg>
+                                Furniture Assembly<span class="accordion-description">Professional assembly of residential and office furniture, from single items to entire room setups.</span>
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content">
-                            <div class="p-5 border-t border-slate-600 text-slate-300">
-                                <p class="mb-6">We build all types of indoor and office furniture, from simple chairs to complex custom setups. We handle each piece with care to ensure a perfect build.</p>
-                                <h4 class="font-bold text-lg text-sky-400">Desks</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Standard (Writing desks): $50</li>
-                                    <li>Standing or L-shaped: $75</li>
-                                    <li>Executive or complex setups: $100</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Chairs & Stools</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Basic (Dining, Bar stools): $25</li>
-                                    <li>Office or Gaming chairs: $50</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Bookshelves & Cabinets</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Small (2–3 shelves or drawers): $50</li>
-                                    <li>Medium (4–6 shelves or drawers): $100</li>
-                                    <li>Large (Wall units, complex storage): $150</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Dressers & Nightstands</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Nightstands: $40</li>
-                                    <li>Small Dressers (≤3 drawers): $60</li>
-                                    <li>Large Dressers (4+ drawers): $100</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Shelving Units</h4>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li>Wall-mounted: $40</li>
-                                    <li>Freestanding: $80</li>
-                                    <li>Modular/custom systems: $120</li>
-                                </ul>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-slate-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="desk-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Desks</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Standard (Writing): $50</li><li>Standing or L-shaped: $75</li><li>Executive / Complex: $100</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Chairs & Stools</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic (Dining, Stools): $25</li><li>Office or Gaming: $50</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bookshelves & Cabinets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (2–3 shelves): $50</li><li>Medium (4–6 shelves): $100</li><li>Large (Wall units): $150</li></ul></div>
+                                    <div id="dresser-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Dressers & Nightstands</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Nightstands: $40</li><li>Small Dressers (≤3 dr.): $60</li><li>Large Dressers (4+ dr.): $100</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Shelving Units</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted: $40</li><li>Freestanding: $80</li><li>Modular Systems: $120</li></ul></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Service Category 2: Fitness & Sports Equipment -->
-                    <div class="border border-slate-700 rounded-lg bg-slate-700">
-                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400">
+                    <!-- Service Category 2: Product Assembly -->
+                    <div id="product-assembly-section" class="border border-slate-700 rounded-lg bg-slate-700 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400 bg-slate-700 rounded-lg transition-colors duration-300">
                             <span class="flex items-center">
-                                <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
-                                Fitness & Sports Equipment
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 icon icon-tabler icon-tabler-puzzle" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" /></svg>
+                                Product Assembly<span class="accordion-description">Assembly of home, office, fitness, and recreational products.</span>
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content">
-                            <div class="p-5 border-t border-slate-600 text-slate-300">
-                                <p class="mb-6">Get your home gym and recreational equipment set up safely and correctly. We assemble treadmills, ellipticals, weight benches, and more.</p>
-                                <h4 class="font-bold text-lg text-sky-400">Fitness Equipment</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Small (Benches, Bikes): $75</li>
-                                    <li>Medium (Treadmills): $125</li>
-                                    <li>Large (Multi-gym systems): $200</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Game Tables</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Foosball, Air Hockey: $75</li>
-                                    <li>Ping Pong: $150</li>
-                                    <li>Pool Tables: $250</li>
-                                </ul>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-slate-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="treadmill-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Fitness Equipment</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Treadmills/Ellipticals: $150</li><li>Home Gyms/Weight Racks: $200</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Sporting Goods</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basketball Hoops: $125</li><li>Ping Pong Tables: $100</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Outdoor Gear</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Grills & Smokers: $75</li><li>Patio Heaters: $50</li></ul></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Service Category 3: Outdoor & Patio -->
-                    <div class="border border-slate-700 rounded-lg bg-slate-700">
-                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400">
+                    <!-- Service Category 3: Office Setup & Installation -->
+                    <div id="office-setup-section" class="border border-slate-700 rounded-lg bg-slate-700 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400 bg-slate-700 rounded-lg transition-colors duration-300">
                             <span class="flex items-center">
-                                <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
-                                Outdoor & Patio
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 icon icon-tabler icon-tabler-briefcase" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
+                                Office Setup & Installation<span class="accordion-description">Complete office furniture and workspace installations.</span>
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content">
-                            <div class="p-5 border-t border-slate-600 text-slate-300">
-                                <p class="mb-6">We'll get your outdoor space ready for enjoyment. We assemble grills, patio furniture, sheds, playsets, and more.</p>
-                                <h4 class="font-bold text-lg text-sky-400">Outdoor Playsets</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Small (Swings): $100</li>
-                                    <li>Medium (Jungle gyms): $250</li>
-                                    <li>Large (Full playsets): $400</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Grills & Patio Furniture</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Small (Chairs, Side tables): $50</li>
-                                    <li>Medium (Grills, Lounges): $100</li>
-                                    <li>Large (Dining sets, Sectionals): $150</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Basketball Hoops</h4>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li>Wall-mounted: $100</li>
-                                    <li>Freestanding: $120</li>
-                                    <li>In-ground: $200</li>
-                                </ul>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-slate-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Desk Setup</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Standard or Ergonomic: $50</li><li>Modular/Corner: $100</li><li>Ergonomic Chairs: $25 – $50</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Conference Tables</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (4–6 seats): $100</li><li>Large (8+ seats): $300</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Workspace</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic layout/setup: $50</li><li>Full configuration: $150</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Cubicle Installation</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Custom quote</li></ul></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Service Category 4: Other Services -->
-                    <div class="border border-slate-700 rounded-lg bg-slate-700">
-                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400">
+                    <!-- Service Category 4: Home Furniture Installation -->
+                    <div id="home-furniture-section" class="border border-slate-700 rounded-lg bg-slate-700 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400 bg-slate-700 rounded-lg transition-colors duration-300">
                             <span class="flex items-center">
-                                <svg class="w-6 h-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.438.995a6.427 6.427 0 010 .255c0 .382.145.755.438.995l1.003.827c.446.368.709.936.57 1.499l-1.296 2.247a1.125 1.125 0 01-1.37.49l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.063-.374-.313-.686-.645-.87a6.52 6.52 0 01-.22-.127c-.324-.196-.72-.257-1.075-.124l-1.217.456a1.125 1.125 0 01-1.37-.49l-1.296-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.437-.995a6.427 6.427 0 010-.255c0-.382-.145-.755-.437-.995l-1.004-.827a1.125 1.125 0 01-.57-1.499l1.296-2.247a1.125 1.125 0 011.37-.49l1.217.456c.355.133.75.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                                Other Services
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 icon icon-tabler icon-tabler-bed" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" /><path d="M7 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg>
+                                Home Furniture Installation<span class="accordion-description">Assembly of key furniture pieces for living spaces.</span>
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content">
-                            <div class="p-5 border-t border-slate-600 text-slate-300">
-                                <p class="mb-6">Don't see what you need? We also offer custom assembly and installation services. Contact us for a personalized quote.</p>
-                                <h4 class="font-bold text-lg text-sky-400">Custom Projects</h4>
-                                <ul class="list-disc list-inside space-y-1 mb-4">
-                                    <li>Pricing is based on an hourly rate of $60/hour.</li>
-                                    <li>Minimum 1-hour charge.</li>
-                                    <li>Contact us with project details for an accurate estimate.</li>
-                                </ul>
-                                <h4 class="font-bold text-lg text-sky-400">Disassembly & Moving Prep</h4>
-                                <ul class="list-disc list-inside space-y-1">
-                                    <li>We can disassemble furniture for moves or disposal.</li>
-                                    <li>Hourly rate of $50/hour applies.</li>
-                                </ul>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-slate-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="bed-frame-card" class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bed Frames</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Twin/Full: $75</li><li>Queen/King: $150</li><li>Bunk/Storage Beds: $200</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Wardrobes & Closets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Freestanding: $100</li><li>Built-in/Modular: $300</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Entertainment Centers</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic TV Stand: $100</li><li>Large Console: $150</li><li>Wall-mounted Units: $175</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Dining Sets</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (2–4 seats): $100</li><li>Medium (4–6 seats): $175</li><li>Large (8+ seats): $250</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Sofas & Recliners</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Loveseats: $75</li><li>Standard/Recliner: $125</li><li>Sectionals/Sleepers: $200</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bookshelves & Storage</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Basic: $50</li><li>Medium: $100</li><li>Custom/Modular: $150</li></ul></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Service Category 5: Outdoor & Specialty Installations -->
+                    <div id="outdoor-specialty-section" class="border border-slate-700 rounded-lg bg-slate-700 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400 bg-slate-700 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 icon icon-tabler icons-tabler-outline icon-tabler-sun"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
+                                Outdoor & Specialty Installations<span class="accordion-description">Assembly of outdoor structures and specialty equipment.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-slate-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Pergolas & Gazebos</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small: $250</li><li>Medium: $500</li><li>Large/Deluxe: $800</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Swings & Hammocks</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Hanging Units: $75</li><li>Full Swing Sets: $100 – $200</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Garden Sheds</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Small (≤6x6 ft): $200</li><li>Medium (6x8–8x10 ft): $400</li><li>Large (10x12+ ft): $600</li></ul></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Bike Racks & Storage</h4><ul class="list-disc list-inside space-y-2 text-slate-700"><li>Wall-mounted Racks: $50</li><li>Freestanding Systems: $100+</li></ul></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 6: Custom Assembly Solutions -->
+                    <div id="custom-solutions-section" class="border border-slate-700 rounded-lg bg-slate-700 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-sky-400 bg-slate-700 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
+                                Custom Assembly Solutions<span class="accordion-description">Tailored services for unique or high-volume projects.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-slate-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Specialized Furniture</h4><p class="text-slate-700">Assembly for custom, antique, or highly complex pieces.</p></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Large-Scale Installations</h4><p class="text-slate-700">Full office setups, commercial displays, or multi-unit residential projects.</p></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">On-Site Modifications</h4><p class="text-slate-700">Custom adjustments, hardware changes, or stability enhancements.</p></div>
+                                    <div class="bg-white p-6 rounded-lg shadow-xl w-full sm:w-[48%] lg:w-[31%] transition-all duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-sky-400"><h4 class="font-bold text-lg text-sky-400 mb-3 text-center">Design-Based Builds</h4><p class="text-slate-700">Working from custom plans or designs to assemble unique items.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -256,17 +297,20 @@
                 <h2 class="text-3xl font-bold text-center mb-4 text-slate-200">Service Information</h2>
                 <div class="w-24 h-1 bg-sky-500 mx-auto mb-12"></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="bg-slate-800 p-6 rounded-lg">
+                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-4 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" /><circle cx="18" cy="18" r="4" /><path d="M15 3v4" /><path d="M7 3v4" /><path d="M3 11h16" /><path d="M18 16.496v1.504l1 1" /></svg>
                         <h4 class="font-bold text-xl text-sky-400">Flexible Scheduling</h4>
-                        <p class="text-slate-300 mt-2">Appointments are available on evenings and weekends to accommodate your busy schedule.</p>
+                        <p class="text-slate-600 mt-3 text-base">Appointments are available on evenings and weekends to accommodate your busy schedule.</p>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-lg">
+                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-4 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="11" r="3" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
                         <h4 class="font-bold text-xl text-sky-400">Service Area</h4>
-                        <p class="text-slate-300 mt-2">We proudly serve all of North Carolina. A travel fee may apply for locations outside our standard service radius.</p>
+                        <p class="text-slate-600 mt-3 text-base">We proudly serve all of North Carolina. A travel fee may apply for locations outside our standard service radius.</p>
                     </div>
-                    <div class="bg-slate-800 p-6 rounded-lg">
+                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-4 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="5" width="18" height="14" rx="3" /><line x1="3" y1="10" x2="21" y2="10" /><line x1="7" y1="15" x2="7.01" y2="15" /><line x1="11" y1="15" x2="13" y2="15" /></svg>
                         <h4 class="font-bold text-xl text-sky-400">Payment Methods</h4>
-                        <p class="text-slate-300 mt-2">We accept all major credit cards, Zelle, and cash. Payment is due upon completion of the service.</p>
+                        <p class="text-slate-600 mt-3 text-base">We accept all major credit cards, Zelle, and cash. Payment is due upon completion of the service.</p>
                     </div>
                 </div>
             </div>
@@ -318,34 +362,131 @@
         </div>
     </footer>
 
+    <style>
+        .highlight-pop {
+            transform: scale(1.05);
+            border-color: #38bdf8; /* Corresponds to sky-400 */
+        }
+        .video-background {
+            transition: opacity 1.5s ease-in-out;
+            opacity: 0;
+        }
+        .video-background.active {
+            opacity: 1;
+        }
+    </style>
     <script>
-        // JavaScript for mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            const popularServiceLinks = document.querySelectorAll('.popular-service-link');
 
-        // JavaScript for accordion functionality
-        const accordionButtons = document.querySelectorAll('.accordion-button');
-
-        accordionButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            // Function to handle opening/closing of accordion sections
+            const toggleAccordion = (button) => {
                 const content = button.nextElementSibling;
-                const wasOpen = button.classList.contains('open');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
-                // Close all accordions
+                // Close all other accordions
                 accordionButtons.forEach(otherButton => {
-                    otherButton.classList.remove('open');
-                    otherButton.nextElementSibling.style.maxHeight = null;
+                    if (otherButton !== button) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherButton.classList.remove('open');
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                    }
                 });
 
-                // If the clicked one wasn't already open, open it
-                if (!wasOpen) {
+                // Toggle the clicked accordion
+                if (!isExpanded) {
+                    button.setAttribute('aria-expanded', 'true');
                     button.classList.add('open');
-                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    button.setAttribute('aria-expanded', 'false');
+                    button.classList.remove('open');
+                    content.style.maxHeight = null;
                 }
+            };
+
+            // Add click listeners to accordion buttons
+            accordionButtons.forEach(button => {
+                button.setAttribute('aria-expanded', 'false'); // Initialize
+                button.addEventListener('click', () => toggleAccordion(button));
+            });
+
+            // Background video switcher
+            const videos = document.querySelectorAll('.video-background');
+            let currentVideoIndex = 0;
+            const videoInterval = 10000; // 10 seconds per video
+
+            if (videos.length > 1) {
+                // Ensure first video is playing
+                videos[currentVideoIndex].play().catch(e => console.error("Video play failed", e));
+
+                setInterval(() => {
+                    // Fade out current video
+                    videos[currentVideoIndex].classList.remove('active');
+
+                    // Move to next video index
+                    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+
+                    // Fade in next video
+                    const nextVideo = videos[currentVideoIndex];
+                    nextVideo.classList.add('active');
+                    nextVideo.currentTime = 0; // Restart video
+                    nextVideo.play().catch(e => console.error("Video play failed", e));
+                }, videoInterval);
+            }
+
+            // Add click listeners to popular service links
+            popularServiceLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    const targetCardId = this.dataset.targetCard; // Get the target card ID
+
+                    if (targetSection) {
+                        // Scroll to the section
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center' // Center the section in the viewport
+                        });
+
+                        const accordionButton = targetSection.querySelector('.accordion-button');
+                        if (accordionButton) {
+                            // Use a timeout to ensure the scroll has started before opening
+                            setTimeout(() => {
+                                // Only open if it's not already open
+                                if (accordionButton.getAttribute('aria-expanded') === 'false') {
+                                    toggleAccordion(accordionButton);
+                                }
+
+                                // Highlight the corresponding card *after* the accordion has had time to open
+                                setTimeout(() => {
+                                    if (targetCardId) {
+                                        const targetCard = document.querySelector(targetCardId);
+                                        if (targetCard) {
+                                            // Add a class to trigger the animation
+                                            targetCard.classList.add('highlight-pop');
+                                            // Remove the class after the animation duration
+                                            setTimeout(() => {
+                                                targetCard.classList.remove('highlight-pop');
+                                            }, 1200); // Keep highlight for 1.2s
+                                        }
+                                    }
+                                }, 500); // Wait for accordion animation (500ms) to finish
+                            }, 500); // Initial delay to allow for scrolling
+                        }
+                    }
+                });
             });
         });
     </script>
