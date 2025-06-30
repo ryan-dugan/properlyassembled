@@ -20,6 +20,40 @@
             font-family: 'IBM Plex Sans', sans-serif;
         }
     </style>
+    <style>
+        @keyframes pop-and-glow {
+          0% {
+            transform: scale(1);
+            border-top-color: transparent;
+          }
+          50% {
+            transform: scale(1.02);
+            border-top-color: #38bdf8; /* Tailwind's sky-400 */
+          }
+          100% {
+            transform: scale(1);
+            border-top-color: transparent;
+          }
+        }
+        .pop-in {
+          animation: pop-and-glow 1s ease-in-out;
+          border-top-width: 4px;
+          border-top-style: solid;
+        }
+    </style>
+    <script>
+        // This script runs in the head, before the body is rendered.
+        // It prevents the browser's default jump-to-anchor behavior by removing the hash.
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        // If the specific hash is present, store a flag and remove the hash from the URL.
+        if (window.location.hash === '#contact-section') {
+            window.shouldScrollToContact = true;
+            // Immediately remove the hash, keeping query parameters.
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+    </script>
 </head>
 <body class="bg-slate-900 text-slate-400">
 
@@ -68,12 +102,12 @@
         </section>
 
         <!-- Contact Form and Info Section -->
-        <section class="py-20 bg-slate-900">
+        <section id="contact-section" class="py-20 bg-slate-900">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     
                     <!-- Contact Information -->
-                    <div class="bg-slate-800 p-8 rounded-lg flex flex-col">
+                    <div class="bg-slate-800 p-8 rounded-lg flex flex-col shadow-lg">
                         <h2 class="text-3xl font-bold text-slate-200 mb-4">Contact Information</h2>
                         <p class="text-slate-300 mb-6">Feel free to call, email, or use the form to send us a message. We aim to respond to all inquiries within 24 hours.</p>
                         <div class="grid grid-cols-1 gap-6 mt-auto">
@@ -128,7 +162,7 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="bg-slate-800 p-8 rounded-lg">
+                    <div id="contact-form-card" class="bg-slate-800 p-8 rounded-lg shadow-lg">
                         <h2 class="text-3xl font-bold text-slate-200 mb-4">Send Us a Message</h2>
                         <form action="https://formspree.io/f/xblyzwap" method="POST" class="space-y-6">
                             <div>
@@ -319,7 +353,36 @@
     </script>
 
     <script>
+        // --- Handle Scrolling & Animation ---
+        // The head script has already prevented the default jump. We now check the flag it set.
+        if (window.shouldScrollToContact) {
+            // Schedule the smooth scroll to happen right after the browser has painted the top of the page.
+            setTimeout(() => {
+                const section = document.getElementById('contact-section');
+                const formCard = document.getElementById('contact-form-card');
+
+                if (section && formCard) {
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+
+                    // Start the animation after the scroll is likely underway to make it more visible.
+                    setTimeout(() => {
+                        formCard.classList.add('pop-in');
+
+                        // Remove the animation class after it has finished to allow re-triggering.
+                        setTimeout(() => {
+                            formCard.classList.remove('pop-in');
+                        }, 1000); // Corresponds to animation duration.
+                    }, 700); // Delay to start animation after scroll begins.
+                }
+            }, 50); // A minimal delay to ensure the page is ready.
+        }
+
+        // --- Handle Autofill and URL Cleanup after DOM is fully loaded ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Handle form autofill from URL query parameters
             const params = new URLSearchParams(window.location.search);
             const service = params.get('service');
             const item = params.get('item');
@@ -332,11 +395,9 @@
                 if (optionToSelect) {
                     optionToSelect.selected = true;
                     
-                    // Trigger the change event to populate the specific services dropdown
                     const event = new Event('change', { bubbles: true });
                     serviceSelect.dispatchEvent(event);
 
-                    // After populating, select the specific item if it exists
                     if (item && specificServiceSelect) {
                         const itemOptionToSelect = Array.from(specificServiceSelect.options).find(opt => opt.value === item);
                         if (itemOptionToSelect) {
@@ -346,10 +407,13 @@
                 }
             }
 
-            // Clean up the URL for a better user experience if any params were present
+            // Clean up the URL query parameters for a better user experience after everything is done.
             if (window.location.search) {
                 const newUrl = window.location.pathname;
-                history.replaceState({}, '', newUrl);
+                // Use a longer timeout to ensure the browser has scrolled before removing the query params.
+                setTimeout(() => {
+                    history.replaceState({}, '', newUrl);
+                }, 1500); // Wait for smooth scroll to complete.
             }
         });
     </script>
