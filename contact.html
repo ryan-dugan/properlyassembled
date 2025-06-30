@@ -73,7 +73,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     
                     <!-- Contact Information -->
-                    <div class="bg-slate-800 p-8 rounded-lg h-full flex flex-col">
+                    <div class="bg-slate-800 p-8 rounded-lg flex flex-col">
                         <h2 class="text-3xl font-bold text-slate-200 mb-4">Contact Information</h2>
                         <p class="text-slate-300 mb-6">Feel free to call, email, or use the form to send us a message. We aim to respond to all inquiries within 24 hours.</p>
                         <div class="grid grid-cols-1 gap-6 mt-auto">
@@ -130,23 +130,37 @@
                     <!-- Contact Form -->
                     <div class="bg-slate-800 p-8 rounded-lg">
                         <h2 class="text-3xl font-bold text-slate-200 mb-4">Send Us a Message</h2>
-                        <form action="#" method="POST" class="space-y-6">
+                        <form action="https://formspree.io/f/xblyzwap" method="POST" class="space-y-6">
                             <div>
                                 <label for="name" class="block text-sm font-semibold text-slate-300">Full Name</label>
                                 <input type="text" id="name" name="name" required="" class="mt-1 block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm text-slate-200 focus:outline-none focus:ring-sky-500 focus:border-sky-500">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-semibold text-slate-300">Email Address</label>
+                                <label for="email" class="block text-sm font-semibold text-slate-300">Email Address*</label>
                                 <input type="email" id="email" name="email" required="" class="mt-1 block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm text-slate-200 focus:outline-none focus:ring-sky-500 focus:border-sky-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-slate-300">Phone Number (Optional)</label>
+                                <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm text-slate-200 focus:outline-none focus:ring-sky-500 focus:border-sky-500">
                             </div>
                             <div>
                                 <label for="service" class="block text-sm font-semibold text-slate-300">Service of Interest</label>
                                 <select id="service" name="service" class="mt-1 block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm text-slate-200 focus:outline-none focus:ring-sky-500 focus:border-sky-500">
-                                    <option>General Inquiry</option>
+                                    <option value="" disabled selected>Select a service</option>
                                     <option>Furniture Assembly</option>
-                                    <option>TV Mounting</option>
-                                    <option>Fitness Equipment Assembly</option>
+                                    <option>Product Assembly</option>
+                                    <option>Office Setup & Installation</option>
+                                    <option>Home Furniture Installation</option>
+                                    <option>Outdoor & Specialty Installations</option>
+                                    <option>Custom Assembly Solutions</option>
                                     <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div id="specific-service-container" class="hidden mt-6">
+                                <label for="specific-service" class="block text-sm font-semibold text-slate-300">Specific Item / Service</label>
+                                <select id="specific-service" name="specific-service" class="mt-1 block w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-md shadow-sm text-slate-200 focus:outline-none focus:ring-sky-500 focus:border-sky-500">
+                                    <!-- Options populated by JS -->
                                 </select>
                             </div>
                             <div>
@@ -216,6 +230,127 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    <script>
+        const serviceOptions = {
+            'Furniture Assembly': [
+                'Desk (Standard, Standing, L-Shaped, Executive)',
+                'Chair / Stool (Dining, Bar, Office, Gaming)',
+                'Bookshelf / Cabinet',
+                'Dresser / Nightstand',
+                'Shelving Unit (Wall-mounted, Freestanding, Modular)',
+                'Other'
+            ],
+            'Product Assembly': [
+                'Fitness Equipment (Bench, Bike, Treadmill, Multi-Gym)',
+                'Outdoor Playset (Swing, Jungle Gym, Full Playset)',
+                'Grill / Patio Furniture',
+                'Game Table (Foosball, Air Hockey, Ping Pong, Pool Table)',
+                'Basketball Hoop (Wall-mounted, Portable, In-ground)',
+                'Other'
+            ],
+            'Office Setup & Installation': [
+                'Desk Setup (Standard, Ergonomic, Modular)',
+                'Ergonomic Chair Setup',
+                'Conference Table Setup',
+                'Cubicle Installation',
+                'Workspace Organization',
+                'Other'
+            ],
+            'Home Furniture Installation': [
+                'Bed Frame (All sizes)',
+                'Bunk / Storage Bed',
+                'Wardrobe / Closet System',
+                'Entertainment Center / TV Stand',
+                'Dining Set',
+                'Sofa / Sectional / Recliner',
+                'Bookshelves / Storage Unit',
+                'Other'
+            ],
+            'Outdoor & Specialty Installations': [
+                'Pergola / Gazebo',
+                'Swing / Hammock',
+                'Garden Shed',
+                'Bike Rack / Storage Solution',
+                'Other'
+            ],
+            'Custom Assembly Solutions': [
+                'Specialized Furniture Project',
+                'Large-Scale Installation Project',
+                'On-Site Modification / Adjustment',
+                'Custom Design Build',
+                'Other'
+            ]
+        };
+
+        const serviceSelect = document.getElementById('service');
+        const specificServiceContainer = document.getElementById('specific-service-container');
+        const specificServiceSelect = document.getElementById('specific-service');
+
+        serviceSelect.addEventListener('change', (e) => {
+            const selectedService = e.target.value;
+            const options = serviceOptions[selectedService] || [];
+
+            // Clear previous options
+            specificServiceSelect.innerHTML = '';
+
+            if (options.length > 0) {
+                // Add a placeholder
+                const placeholderOption = document.createElement('option');
+                placeholderOption.value = "";
+                placeholderOption.textContent = "Select an item";
+                placeholderOption.disabled = true;
+                placeholderOption.selected = true;
+                specificServiceSelect.appendChild(placeholderOption);
+
+                // Populate new options
+                options.forEach(optionText => {
+                    const option = document.createElement('option');
+                    option.value = optionText;
+                    option.textContent = optionText;
+                    specificServiceSelect.appendChild(option);
+                });
+                specificServiceContainer.classList.remove('hidden');
+            } else {
+                specificServiceContainer.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            const item = params.get('item');
+            const serviceSelect = document.getElementById('service');
+            const specificServiceSelect = document.getElementById('specific-service');
+
+            if (service && serviceSelect) {
+                const optionToSelect = Array.from(serviceSelect.options).find(opt => opt.value === service);
+
+                if (optionToSelect) {
+                    optionToSelect.selected = true;
+                    
+                    // Trigger the change event to populate the specific services dropdown
+                    const event = new Event('change', { bubbles: true });
+                    serviceSelect.dispatchEvent(event);
+
+                    // After populating, select the specific item if it exists
+                    if (item && specificServiceSelect) {
+                        const itemOptionToSelect = Array.from(specificServiceSelect.options).find(opt => opt.value === item);
+                        if (itemOptionToSelect) {
+                            itemOptionToSelect.selected = true;
+                        }
+                    }
+                }
+            }
+
+            // Clean up the URL for a better user experience if any params were present
+            if (window.location.search) {
+                const newUrl = window.location.pathname;
+                history.replaceState({}, '', newUrl);
+            }
         });
     </script>
 </body>

@@ -34,6 +34,11 @@
             z-index: -100;
             transform: translateX(-50%) translateY(-50%);
             background-size: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero-video.active {
+            opacity: 1;
         }
         .hero-section::after {
             content: '';
@@ -125,11 +130,8 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section">
-            <video autoplay loop muted playsinline class="hero-video">
-                <!-- IMPORTANT: Replace 'hero-video.mp4' with the actual name of your video file inside the 'assets' folder. -->
-                <source src="assets/hero_vid.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <video id="hero-video-1" autoplay muted playsinline class="hero-video active" src="assets/hero_vid.mp4">Your browser does not support the video tag.</video>
+            <video id="hero-video-2" muted playsinline class="hero-video"></video>
             <div class="hero-content container mx-auto">
                 <h1 class="text-5xl font-bold mb-4 font-ibm-plex text-slate-100">Expert Assembly, Done Right.</h1>
                 <p class="text-xl mb-8 text-slate-300">From flat-pack furniture to complex equipment, we build it all.</p>
@@ -171,7 +173,8 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center mt-12">
                     <!-- Furniture Assembly Card -->
-                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                    <a href="./services.html?service=furniture-assembly-section" class="block">
+                        <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 1 1 4 0v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2z"></path>
@@ -181,9 +184,11 @@
                         </svg>
                         <h3 class="font-bold text-xl mb-4 text-slate-900">Furniture Assembly</h3>
                         <p class="text-slate-600">IKEA, Wayfair, Amazon, and more. We build beds, desks, cabinets, and anything in between.</p>
-                    </div>
+                        </div>
+                    </a>
                     <!-- Fitness Equipment Card -->
-                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                    <a href="./services.html?service=product-assembly-section" class="block">
+                        <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
@@ -191,9 +196,11 @@
                         </svg>
                         <h3 class="font-bold text-xl mb-4 text-slate-900">Fitness Equipment</h3>
                         <p class="text-slate-600">Treadmills, ellipticals, home gyms, and bikes. Get your workout started safely and correctly.</p>
-                    </div>
+                        </div>
+                    </a>
                     <!-- Outdoor & Patio Card -->
-                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                    <a href="./services.html?service=outdoor-specialty-section" class="block">
+                        <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
@@ -201,7 +208,8 @@
                         </svg>
                         <h3 class="font-bold text-xl mb-4 text-slate-900">Outdoor & Patio</h3>
                         <p class="text-slate-600">Grills, patio furniture, sheds, and playsets. We'll get your outdoor space ready for enjoyment.</p>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -378,24 +386,60 @@
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script>
-        // JavaScript for mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            // Flickity carousel
+            const testimonialCarousel = document.querySelector('.testimonial-carousel');
+            if (testimonialCarousel) {
+                new Flickity(testimonialCarousel, {
+                    cellAlign: 'left',
+                    contain: true,
+                    groupCells: false,
+                    prevNextButtons: true,
+                    pageDots: false,
+                    autoPlay: 3000,
+                    wrapAround: true
+                });
+            }
 
-        // Flickity carousel
-        var flkty = new Flickity( '.testimonial-carousel', {
-            // options
-            cellAlign: 'left',
-            contain: true,
-            groupCells: false,
-            prevNextButtons: true,
-            pageDots: false,
-            autoPlay: 3000,
-            wrapAround: true
+            // Hero video carousel with crossfade
+            const videoPlayer1 = document.getElementById('hero-video-1');
+            const videoPlayer2 = document.getElementById('hero-video-2');
+            if (videoPlayer1 && videoPlayer2) {
+                const videoSources = [
+                    'assets/hero_vid.mp4',
+                    'assets/home2.mp4',
+                    'assets/home3.mp4',
+                    'assets/home4.mp4'
+                ];
+                let currentVideoIndex = 0;
+                let activePlayer = videoPlayer1;
+                let inactivePlayer = videoPlayer2;
+
+                const switchVideo = () => {
+                    currentVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+                    
+                    inactivePlayer.src = videoSources[currentVideoIndex];
+                    inactivePlayer.load();
+                    inactivePlayer.play();
+
+                    inactivePlayer.classList.add('active');
+                    activePlayer.classList.remove('active');
+
+                    [activePlayer, inactivePlayer] = [inactivePlayer, activePlayer];
+                };
+
+                videoPlayer1.addEventListener('ended', switchVideo);
+                videoPlayer2.addEventListener('ended', switchVideo);
+            }
         });
     </script>
 </body>
