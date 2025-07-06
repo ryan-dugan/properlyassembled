@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Properly Assembled - Expert Assembly Services in North Carolina</title>
+    <meta name="description" content="Properly Assembled offers expert furniture assembly, fitness equipment setup, and outdoor structure installation in Greensboro, NC and surrounding areas. Get a free quote today!">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="/img/logo_transparent.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -94,6 +95,21 @@
         .testimonial-carousel {
             min-height: 420px; /* Ensures container is tall enough for the longest review */
         }
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            background-color: #1e293b; /* bg-slate-800 */
+        }
+        #mobile-menu.is-open {
+            max-height: 20rem; /* 320px, adjust if needed */
+        }
+
+        @media screen and (max-width: 767px) {
+            .flickity-prev-next-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-400">
@@ -102,7 +118,7 @@
     <header class="bg-slate-800 shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
             <a href="./index.html" class="flex items-center space-x-2">
-                <img class="w-10 h-10" src="./img/logo_transparent.png" alt="Properly Assembled">
+                <img class="w-10 h-10" src="./img/logo_transparent.png" alt="Properly Assembled Logo">
                 <span class="text-2xl text-slate-100 font-ibm-plex">
                     <span>Properly</span>
                     <span class="font-bold">Assembled</span>
@@ -118,18 +134,20 @@
                 Get a Free Quote
             </a>
             <button id="mobile-menu-button" class="md:hidden text-slate-300">
-                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mobileMenuIconTitle"><title id="mobileMenuIconTitle">Mobile Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-slate-800">
-            <a href="./index.html" class="block text-sky-400 py-2 font-bold">Home</a>
-            <a href="./services.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Services</a>
-            <a href="./gallery.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Gallery</a>
-            <a href="./contact.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Contact</a>
-            <a href="./contact.html" class="block mt-4 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 text-center">
-                Get a Free Quote
-            </a>
+        <div id="mobile-menu" class="md:hidden">
+            <div class="px-6 pt-2 pb-4">
+                <a href="./index.html" class="block text-sky-400 py-2 font-bold">Home</a>
+                <a href="./services.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Services</a>
+                <a href="./gallery.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Gallery</a>
+                <a href="./contact.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Contact</a>
+                <a href="./contact.html" class="block mt-4 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 text-center">
+                    Get a Free Quote
+                </a>
+            </div>
         </div>
     </header>
 
@@ -149,8 +167,8 @@
         <section id="about" class="py-20 bg-slate-800">
             <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <div class="flex justify-center items-center gap-x-3">
-                        <svg class="w-10 h-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-3">
+                        <svg class="w-10 h-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" role="img" aria-labelledby="trustedPartnerIconTitle"><title id="trustedPartnerIconTitle">Checkmark Icon</title><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         <h2 class="text-3xl font-bold mb-0 text-slate-200">Your Trusted Partner for Precision Assembly</h2>
                     </div>
                 </div>
@@ -168,9 +186,10 @@
         <!-- Services Overview Section -->
         <section id="services" class="py-20 bg-gray-900">
             <div class="container mx-auto px-6">
-                <div class="flex justify-between items-center mb-12">
-                    <div class="flex items-center gap-x-3">
-                        <svg class="w-8 h-8 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <div class="flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:text-left mb-12">
+                    <div class="flex flex-col md:flex-row items-center gap-3 mb-4 md:mb-0">
+                        <svg class="w-12 h-12 md:w-8 md:h-8 text-sky-400 mb-4 md:mb-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" role="img" aria-labelledby="servicesIconTitle">
+                            <title id="servicesIconTitle">Services Icon</title>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008Z"></path>
                         </svg>
@@ -178,7 +197,8 @@
                     </div>
                     <a href="./services.html" class="text-lg font-semibold text-sky-400 hover:text-sky-500 transition-colors duration-300 flex items-center group">
                         See All Services
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-labelledby="seeAllServicesArrowTitle">
+                            <title id="seeAllServicesArrowTitle">Arrow Icon</title>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </a>
@@ -187,7 +207,8 @@
                     <!-- Furniture Assembly Card -->
                     <a href="./services.html?service=furniture-assembly-section" class="block">
                         <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="furnitureIconTitle">
+                            <title id="furnitureIconTitle">Furniture Icon</title>
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 1 1 4 0v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2z"></path>
                             <path d="M5 11v-5a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v5"></path>
@@ -201,7 +222,8 @@
                     <!-- Fitness Equipment Card -->
                     <a href="./services.html?service=product-assembly-section" class="block">
                         <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="fitnessIconTitle">
+                            <title id="fitnessIconTitle">Fitness Equipment Icon</title>
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
                             <path d="M6.835 9h10.33a1 1 0 0 1 .984 .821l1.637 9a1 1 0 0 1 -.984 1.179h-13.604a1 1 0 0 1 -.984 -1.179l1.637 -9a1 1 0 0 1 .984 -.821z"></path>
@@ -213,7 +235,8 @@
                     <!-- Outdoor & Patio Card -->
                     <a href="./services.html?service=outdoor-specialty-section" class="block">
                         <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto mb-6 text-slate-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="outdoorIconTitle">
+                            <title id="outdoorIconTitle">Outdoor Icon</title>
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
                             <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
@@ -237,7 +260,7 @@
                     <div class="flex">
                         <div class="flex-shrink-0">
                             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-700 text-sky-400">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="qualityIconTitle"><title id="qualityIconTitle">Quality Guarantee Icon</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
                         </div>
                         <div class="ml-4">
@@ -248,7 +271,7 @@
                     <div class="flex">
                         <div class="flex-shrink-0">
                             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-700 text-sky-400">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="efficientIconTitle"><title id="efficientIconTitle">Efficient & On-Time Icon</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                         </div>
                         <div class="ml-4">
@@ -259,7 +282,7 @@
                     <div class="flex">
                         <div class="flex-shrink-0">
                             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-slate-700 text-sky-400">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="insuredIconTitle"><title id="insuredIconTitle">Fully Insured Icon</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             </div>
                         </div>
                         <div class="ml-4">
@@ -277,13 +300,13 @@
                 <h2 class="text-3xl font-bold text-slate-200">What Our Customers Say</h2>
                 <p class="mt-4 text-lg text-slate-300">Real feedback from verified customers.</p>
                 <div class="w-24 h-1 bg-sky-500 mx-auto mt-8 mb-12"></div>
-                <div class="testimonial-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "groupCells": false, "prevNextButtons": true, "pageDots": false, "autoPlay": 3000, "wrapAround": true, "adaptiveHeight": true }'>
+                <div class="testimonial-carousel">
                     <!-- Laker B. -->
                     <div class="carousel-cell w-full md:w-1/2 lg:w-1/3 p-4 flex">
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"Did an awesome job. Took his time and the results reflect it. I had two dressers with tons of screws and hardware that I wanted no part of. He handled it with no problem. Will definitely use again and highly recommended."</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconLakerB"><title id="testimonialIconLakerB">Customer Testimonial Icon for Laker B.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- Laker B.</p>
                             </div>
                         </div>
@@ -293,7 +316,7 @@
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"Nate was amazing. I hired him for two jobs. The first he assembled my king bed and tv stand/fireplace. Second time table/chairs and dresser. He is very professional and treats your items like they were his own. I highly recommend him."</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconReneeB"><title id="testimonialIconReneeB">Customer Testimonial Icon for Renee B.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- Renee B.</p>
                             </div>
                         </div>
@@ -303,7 +326,7 @@
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"I can't say enough about the amazing job putting together my kids' loft bed! He worked tirelessly... Not only was he incredibly skilled and efficient, but he was also a true gentleman. We're so grateful for his hard work."</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconBridgettS"><title id="testimonialIconBridgettS">Customer Testimonial Icon for Bridgett S.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- Bridgett S.</p>
                             </div>
                         </div>
@@ -314,7 +337,7 @@
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"Nathan is very professional,and work driven and does a great job assembling! He value what he does and work at an affordable price. if you needs an assembler,definitely contact him,he's the best!"</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconRavenC"><title id="testimonialIconRavenC">Customer Testimonial Icon for Raven C.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- Raven C.</p>
                             </div>
                         </div>
@@ -324,7 +347,7 @@
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"Super super great to work with. Responded quickly, very flexible given my situation and went above/beyond my expectations for installation. 10/10 definitely recommend."</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconFavourO"><title id="testimonialIconFavourO">Customer Testimonial Icon for Favour O.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- Favour O.</p>
                             </div>
                         </div>
@@ -334,7 +357,7 @@
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"Bottom line he came in and did exactly what we discussed. No run around. No extra pitches. Straight to the point. Punctual and professional. That's all I can ask for. I appreciate the help."</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconKevinS"><title id="testimonialIconKevinS">Customer Testimonial Icon for KEVIN S.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- KEVIN S.</p>
                             </div>
                         </div>
@@ -345,7 +368,7 @@
                         <div class="bg-white px-6 py-12 rounded-lg shadow-xl border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full">
                             <p class="text-lg text-slate-600 mb-4 flex-grow">"Nate was excellent. He arrived on time, he was friendly and professional. He was very focused on his work and did an excellent job!! I would recommend him to anyone needing assistance assembling items!"</p>
                             <div class="flex items-center justify-center mt-auto pt-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-14 h-14 text-slate-400 mr-3" role="img" aria-labelledby="testimonialIconDeniseY"><title id="testimonialIconDeniseY">Customer Testimonial Icon for Denise Y.</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                                 <p class="text-xl font-bold text-slate-800">- Denise Y.</p>
                             </div>
                         </div>
@@ -404,17 +427,18 @@
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('is-open');
                 });
             }
 
-            // Flickity carousel
-            const testimonialCarousel = document.querySelector('.testimonial-carousel');
-            if (testimonialCarousel) {
-                new Flickity(testimonialCarousel, {
-                    cellAlign: 'left',
+            // Flickity Carousel
+            const carouselElem = document.querySelector('.testimonial-carousel');
+            if (carouselElem) {
+                new Flickity(carouselElem, {
+                    cellAlign: 'center',
                     contain: true,
                     groupCells: false,
+                    percentPosition: true,
                     prevNextButtons: true,
                     pageDots: false,
                     autoPlay: 3000,

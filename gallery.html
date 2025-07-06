@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Properly Assembled</title>
+    <meta name="description" content="View our gallery of completed projects, including office furniture, home living and bedroom sets, fitness equipment, and outdoor structures. Quality assembly services.">
     <link rel="icon" href="/img/logo_transparent.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +25,15 @@
             object-fit: cover;
             background-color: #f3f4f6; /* A light gray background for empty images */
         }
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            background-color: #1e293b; /* bg-slate-800 */
+        }
+        #mobile-menu.is-open {
+            max-height: 20rem; /* 320px, adjust if needed */
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-400">
@@ -32,7 +42,7 @@
     <header class="bg-slate-800 shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
             <a href="./index.html" class="flex items-center space-x-2">
-                <img class="w-10 h-10" src="./img/logo_transparent.png" alt="Properly Assembled">
+                <img class="w-10 h-10" src="./img/logo_transparent.png" alt="Properly Assembled Logo">
                 <span class="text-2xl text-slate-100 font-ibm-plex">
                     <span>Properly</span>
                     <span class="font-bold">Assembled</span>
@@ -48,11 +58,12 @@
                 Get a Free Quote
             </a>
             <button id="mobile-menu-button" class="md:hidden text-slate-300">
-                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mobileMenuIconTitle"><title id="mobileMenuIconTitle">Mobile Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-slate-800">
+        <div id="mobile-menu" class="md:hidden">
+            <div class="px-6 pt-2 pb-4">
             <a href="./index.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Home</a>
             <a href="./services.html" class="block text-slate-300 hover:text-sky-400 py-2 font-semibold">Services</a>
             <a href="./gallery.html" class="block text-sky-400 py-2 font-bold">Gallery</a>
@@ -60,6 +71,7 @@
             <a href="./contact.html" class="block mt-4 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300 text-center">
                 Get a Free Quote
             </a>
+            </div>
         </div>
     </header>
 
@@ -79,7 +91,7 @@
                 <!-- Category: Office Furniture -->
                 <div>
                     <div class="inline-block mb-8">
-                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-briefcase"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>Office Furniture</h2>
+                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-briefcase" role="img" aria-labelledby="officeIconTitle"><title id="officeIconTitle">Office Furniture Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>Office Furniture</h2>
                         <div class="h-1 bg-sky-500"></div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -116,7 +128,7 @@
                 <!-- Category: Home Living & Bedroom -->
                 <div>
                     <div class="inline-block mb-8">
-                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-armchair"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 1 1 4 0v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2z" /><path d="M5 11v-5a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v5" /><path d="M6 19v2" /><path d="M18 19v2" /></svg>Home Living &amp; Bedroom</h2>
+                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-armchair" role="img" aria-labelledby="homeLivingIconTitle"><title id="homeLivingIconTitle">Home Living and Bedroom Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 1 1 4 0v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2z" /><path d="M5 11v-5a3 3 0 0 1 3 -3h8a3 3 0 0 1 3 3v5" /><path d="M6 19v2" /><path d="M18 19v2" /></svg>Home Living &amp; Bedroom</h2>
                         <div class="h-1 bg-sky-500"></div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -180,7 +192,7 @@
                 <!-- Category: Fitness & Recreation -->
                 <div>
                     <div class="inline-block mb-8">
-                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-play-football"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M3 17l5 1l.75 -1.5" /><path d="M14 21v-4l-4 -3l1 -6" /><path d="M6 12v-3l5 -1l3 3l3 1" /><path d="M19.5 20a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" /></svg>Fitness &amp; Recreation</h2>
+                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-play-football" role="img" aria-labelledby="fitnessIconTitle"><title id="fitnessIconTitle">Fitness and Recreation Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11 4a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M3 17l5 1l.75 -1.5" /><path d="M14 21v-4l-4 -3l1 -6" /><path d="M6 12v-3l5 -1l3 3l3 1" /><path d="M19.5 20a.5 .5 0 1 0 0 -1a.5 .5 0 0 0 0 1z" fill="currentColor" /></svg>Fitness &amp; Recreation</h2>
                         <div class="h-1 bg-sky-500"></div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -217,7 +229,7 @@
                 <!-- Category: Outdoor & Patio -->
                 <div>
                     <div class="inline-block mb-8">
-                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-sun"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>Outdoor &amp; Patio</h2>
+                        <h2 class="text-3xl font-bold mb-2 flex items-center text-slate-200"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-400 icon icon-tabler icons-tabler-outline icon-tabler-sun" role="img" aria-labelledby="outdoorIconTitle"><title id="outdoorIconTitle">Outdoor and Patio Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>Outdoor &amp; Patio</h2>
                         <div class="h-1 bg-sky-500"></div>
                     </div>
                      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -305,7 +317,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('is-open');
         });
     </script>
 </body>
