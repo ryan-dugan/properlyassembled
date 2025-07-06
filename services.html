@@ -38,22 +38,29 @@
             border-bottom-right-radius: 0;
         }
         .accordion-description {
-            display: inline-block;
-            vertical-align: middle;
-            max-width: 0;
-            opacity: 0;
-            margin-left: 0;
-            font-size: 0.9rem; /* Slightly smaller */
-            font-weight: 400;
-            color: #cbd5e1; /* Lighter color: slate-300 */
-            white-space: nowrap;
-            overflow: hidden;
-            transition: max-width 0.4s ease-in-out, opacity 0.3s ease-in-out 0.1s, margin-left 0.4s ease-in-out;
+            display: none; /* Hide on mobile by default */
         }
-        .accordion-button.open .accordion-description {
-            max-width: 700px; /* Generous max-width to reveal text */
-            opacity: 1;
-            margin-left: 1rem;
+
+        /* Show and animate on desktop */
+        @media (min-width: 768px) { /* md breakpoint */
+            .accordion-description {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 0;
+                opacity: 0;
+                margin-left: 0;
+                font-size: 0.9rem; /* Slightly smaller */
+                font-weight: 400;
+                color: #cbd5e1; /* Lighter color: slate-300 */
+                white-space: nowrap;
+                overflow: hidden;
+                transition: max-width 0.4s ease-in-out, opacity 0.3s ease-in-out 0.1s, margin-left 0.4s ease-in-out;
+            }
+            .accordion-button.open .accordion-description {
+                max-width: 700px; /* Generous max-width to reveal text */
+                opacity: 1;
+                margin-left: 1rem;
+            }
         }
 
         /* Animation for highlighting a card */
@@ -192,7 +199,7 @@
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-slate-700 rounded-b-lg">
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
@@ -215,7 +222,7 @@
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-slate-700 rounded-b-lg">
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
@@ -238,7 +245,7 @@
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-slate-700 rounded-b-lg">
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
@@ -260,7 +267,7 @@
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-slate-700 rounded-b-lg">
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
@@ -284,7 +291,7 @@
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-slate-700 rounded-b-lg">
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
@@ -306,7 +313,7 @@
                             </span>
                             <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-500 ease-in-out bg-slate-700 rounded-b-lg">
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-slate-700 rounded-b-lg">
                             <div class="p-5 md:p-8 text-slate-300">
                                 
                                 <div class="flex flex-wrap gap-6 justify-center">
@@ -367,7 +374,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="font-bold text-slate-200 uppercase tracking-wider">About Us</h3>
-                    <p class="mt-4 text-slate-300">Properly Assembled is your trusted partner for professional assembly services. We ensure your items are built correctly, safely, and efficiently.</p>
+                    <p class="mt-4 text-slate-300">Properly Assembled is your trusted partner for professional assembly and installation services in North Carolina. We focus on precision, safety, and efficiency—whether it’s home furniture, office setups, or outdoor structures. Every project is built with care and attention to detail, backed by flexible scheduling and quality assurance. From personal jobs to community work, we assemble it right the first time.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-slate-200 uppercase tracking-wider">Quick Links</h3>
@@ -486,22 +493,56 @@
 
                     // Function to scroll and highlight
                     const scrollAndHighlight = () => {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
+                        const isMobile = window.innerWidth < 768;
+
+                        // If no specific card is targeted (e.g., navigating from another page),
+                        // scroll to the top of the section, just under the sticky header.
+                        if (!targetCardId) {
+                            const header = document.querySelector('header.sticky');
+                            const headerHeight = header ? header.offsetHeight : 0;
+                            const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+                            const targetScrollY = elementPosition - headerHeight;
+
+                            window.scrollTo({
+                                top: targetScrollY,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // If a specific card IS targeted, use the existing centering logic.
+                            if (isMobile) {
+                                const elementToCenter = document.getElementById(targetCardId);
+                                if (elementToCenter) {
+                                    const header = document.querySelector('header.sticky');
+                                    const headerHeight = header ? header.offsetHeight : 0;
+                                    const elementPosition = elementToCenter.getBoundingClientRect().top + window.pageYOffset;
+                                    const elementHeight = elementToCenter.offsetHeight;
+                                    const viewportHeight = window.innerHeight;
+                                    const targetScrollY = elementPosition + (elementHeight / 2) - (viewportHeight / 2) - (headerHeight / 2);
+
+                                    window.scrollTo({
+                                        top: targetScrollY,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            } else {
+                                targetSection.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center'
+                                });
+                            }
+                        }
 
                         // Highlight the card if a specific card is targeted
                         if (targetCardId) {
                             const targetCard = document.getElementById(targetCardId);
                             if (targetCard) {
-                                // Add a small delay for the scroll to finish before highlighting
+                                const highlightDelay = isMobile ? 500 : 150;
                                 setTimeout(() => {
                                     targetCard.classList.add('highlight-pop');
                                     setTimeout(() => {
                                         targetCard.classList.remove('highlight-pop');
-                                    }, 1200); // Animation duration
-                                }, 300); 
+                                    }, 1200);
+                                }, highlightDelay);
                             }
                         }
                     };
@@ -513,7 +554,7 @@
                         // If it's closed, open it first.
                         toggleAccordion(accordionButton);
                         // Then wait for the open animation to complete before scrolling.
-                        setTimeout(scrollAndHighlight, 500); // Must match CSS transition time
+                        setTimeout(scrollAndHighlight, 300); // Must match CSS transition time
                     }
                 }
             }

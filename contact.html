@@ -19,6 +19,15 @@
         .font-ibm-plex {
             font-family: 'IBM Plex Sans', sans-serif;
         }
+        .text-container {
+            min-width: 0; /* Allows flex item to shrink below its content's natural size */
+        }
+        .truncate-text {
+            display: block; /* Ensures the element behaves like a block for overflow properties */
+            white-space: nowrap; /* Prevents the text from wrapping to a new line */
+            overflow: hidden; /* Hides any text that overflows the container */
+            text-overflow: ellipsis; /* Adds '...' to truncated text */
+        }
     </style>
     <style>
         @keyframes pop-and-glow {
@@ -112,8 +121,8 @@
                         <p class="text-slate-300 mb-6">Feel free to call, email, or use the form to send us a message. We aim to respond to all inquiries within 24 hours.</p>
                         <div class="grid grid-cols-1 gap-6 mt-auto">
                             <!-- Email Card -->
-                            <div class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                                <div class="flex items-center space-x-4">
+                            <div class="bg-white rounded-lg p-4 md:p-6 shadow-lg border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                                <div class="flex items-center space-x-2 md:space-x-4">
                                     <div class="bg-slate-100 p-3 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -121,15 +130,15 @@
                                             <path d="M3 7l9 6l9 -6"></path>
                                         </svg>
                                     </div>
-                                    <div>
+                                    <div class="text-container">
                                         <h3 class="text-xl font-semibold text-slate-800">Email</h3>
-                                        <a href="mailto:contact@properlyassembled.com" class="text-sky-600 hover:underline">contact@properlyassembled.com</a>
+                                        <a href="mailto:contact@properlyassembled.com" class="text-sky-600 hover:underline text-sm md:text-base truncate-text">contact@properlyassembled.com</a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Phone Card -->
-                            <div class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                                <div class="flex items-center space-x-4">
+                            <div class="bg-white rounded-lg p-4 md:p-6 shadow-lg border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                                <div class="flex items-center space-x-2 md:space-x-4">
                                     <div class="bg-slate-100 p-3 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -143,8 +152,8 @@
                                 </div>
                             </div>
                             <!-- Service Area Card -->
-                            <div class="bg-white rounded-lg p-6 shadow-lg border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                                <div class="flex items-center space-x-4">
+                            <div class="bg-white rounded-lg p-4 md:p-6 shadow-lg border-t-4 border-transparent hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                                <div class="flex items-center space-x-2 md:space-x-4">
                                     <div class="bg-slate-100 p-3 rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -235,7 +244,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="font-bold text-slate-200 uppercase tracking-wider">About Us</h3>
-                    <p class="mt-4 text-slate-300">Properly Assembled is your trusted partner for professional assembly services. We ensure your items are built correctly, safely, and efficiently.</p>
+                    <p class="mt-4 text-slate-300">Properly Assembled is your trusted partner for professional assembly and installation services in North Carolina. We focus on precision, safety, and efficiency—whether it’s home furniture, office setups, or outdoor structures. Every project is built with care and attention to detail, backed by flexible scheduling and quality assurance. From personal jobs to community work, we assemble it right the first time.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-slate-200 uppercase tracking-wider">Quick Links</h3>
