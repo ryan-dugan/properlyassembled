@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Properly Assembled</title>
+    <meta name="description" content="Explore the wide range of professional assembly services offered by Properly Assembled, including furniture, fitness equipment, office setups, and more. Get a free, guaranteed quote today.">
+    <link rel="icon" href="./img/transparent_icon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-ibm-plex {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .accordion-button svg.chevron {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button.open svg.chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+    <style>
+        .accordion-button.open {
+            background-color: #525252; /* Tailwind neutral-600 */
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .accordion-description {
+            display: none; /* Hide on mobile by default */
+        }
+
+        /* Show and animate on desktop */
+        @media (min-width: 768px) { /* md breakpoint */
+            .accordion-description {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 0;
+                opacity: 0;
+                margin-left: 0;
+                font-size: 0.9rem; /* Slightly smaller */
+                font-weight: 400;
+                color: #d4d4d4; /* Lighter color: neutral-300 */
+                white-space: nowrap;
+                overflow: hidden;
+                transition: max-width 0.4s ease-in-out, opacity 0.3s ease-in-out 0.1s, margin-left 0.4s ease-in-out;
+            }
+            .accordion-button.open .accordion-description {
+                max-width: 700px; /* Generous max-width to reveal text */
+                opacity: 1;
+                margin-left: 1rem;
+            }
+        }
+
+        /* Animation for highlighting a card */
+        @keyframes pop-highlight {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(115, 115, 115, 0); /* neutral-500 */
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(115, 115, 115, 0); /* neutral-500 */
+            }
+        }
+        .highlight-pop {
+            animation: pop-highlight 1.2s ease-in-out;
+        }
+    </style>
+    <script>
+        // Set scroll restoration to manual to prevent the browser's default jump for hashes.
+        // This needs to be in the <head> to execute before the browser can act on a hash.
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+</head>
+<style>
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            background-color: #171717; /* bg-neutral-900 */
+        }
+        #mobile-menu.is-open {
+            max-height: 20rem; /* 320px, adjust if needed */
+        }
+    </style>
+<body class="bg-black text-neutral-400">
+
+    <!-- Header / Navigation -->
+    <header class="bg-neutral-800 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="./index.html">
+                <img src="./img/transparent_full.png" alt="Properly Assembled Logo" class="h-12">
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="./index.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Home</a>
+                <a href="./services.html" class="text-blue-400 font-bold">Services</a>
+                <a href="./gallery.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Gallery</a>
+                <a href="./rentals.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Rentals</a>
+                <a href="./contact.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Contact</a>
+            </div>
+            <a href="./contact.html" class="hidden md:block bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
+                Get a Free Quote
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-neutral-300">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mobile-menu-icon-title"><title id="mobile-menu-icon-title">Open Main Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden">
+            <div class="px-6 pt-2 pb-4">
+            <a href="./index.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Home</a>
+            <a href="./services.html" class="block text-blue-400 py-2 font-bold">Services</a>
+            <a href="./gallery.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Gallery</a>
+            <a href="./rentals.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Rentals</a>
+            <a href="./contact.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Contact</a>
+            <a href="./contact.html" class="block mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 text-center">
+                Get a Free Quote
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title Section -->
+        <section class="bg-neutral-900">
+            <div class="container mx-auto px-6 py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight text-white">Our Services</h1>
+                <p class="mt-4 text-lg text-neutral-300 max-w-3xl mx-auto">We offer a wide range of professional assembly services. Explore our offerings below or contact us for a custom quote.</p>
+            </div>
+        </section>
+        
+        <!-- Most Popular Services Section -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">Most Popular Services</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <a href="#home-furniture-section" class="popular-service-link" data-target-card="#bed-frame-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-transform transition-shadow transition-colors duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-neutral-800">Bed Frame</h3>
+                        <p class="text-4xl font-bold text-blue-400 mb-2">$75-$200</p>
+                        <p class="text-neutral-600">Standard bed frame assembly, any size.</p>
+                    </div>
+                    </a>
+                    <!-- Card 2 -->
+                    <a href="#product-assembly-section" class="popular-service-link" data-target-card="#mounting-hanging-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-transform transition-shadow transition-colors duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-neutral-800">Mounting &amp; Hanging</h3>
+                        <p class="text-4xl font-bold text-blue-400 mb-2">$50-$125</p>
+                        <p class="text-neutral-600">TVs, art, shelves, and more.</p>
+                    </div>
+                    </a>
+                    <!-- Card 3 -->
+                    <a href="#furniture-assembly-section" class="popular-service-link" data-target-card="#dresser-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-transform transition-shadow transition-colors duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-neutral-800">Large Dresser</h3>
+                        <p class="text-4xl font-bold text-blue-400 mb-2">$100</p>
+                        <p class="text-neutral-600">For dressers with 4 or more drawers.</p>
+                    </div>
+                    </a>
+                    <!-- Card 4 -->
+                    <a href="#furniture-assembly-section" class="popular-service-link" data-target-card="#desk-card">
+                    <div class="bg-white rounded-lg px-6 py-12 text-center shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-transform transition-shadow transition-colors duration-300 transform hover:-translate-y-2 hover:shadow-2xl h-full">
+                        <h3 class="text-xl font-bold mb-2 text-neutral-800">Desk</h3>
+                        <p class="text-4xl font-bold text-blue-400 mb-2">$50-$100</p>
+                        <p class="text-neutral-600">Standard or L-shaped office desks.</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Accordion -->
+        <section class="relative py-20 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full z-0">
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover video-background active" src="assets/s1.mp4"></video>
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover video-background" src="assets/s2.mp4"></video>
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover video-background" src="assets/s3.mp4"></video>
+                <div class="absolute top-0 left-0 w-full h-full bg-black opacity-75"></div>
+            </div>
+            <div class="relative z-10 container mx-auto px-6 max-w-7xl">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">Complete Service & Price List</h2>
+                <p class="text-center text-neutral-400 mb-12 max-w-3xl mx-auto">All prices listed are estimates. A final, guaranteed quote will be provided before any work begins. Prices may vary based on item complexity and condition.</p>
+                <div id="accordion-services" class="max-w-7xl mx-auto bg-black rounded-2xl shadow-2xl p-4 md:p-6">
+                    <!-- Service Category 1: Furniture Assembly -->
+                    <div id="furniture-assembly-section" class="border border-neutral-700 rounded-lg bg-neutral-800 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-blue-400 bg-neutral-800 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 icon icon-tabler icons-tabler-outline icon-tabler-desk" role="img" aria-labelledby="furniture-assembly-icon-title"><title id="furniture-assembly-icon-title">Furniture Assembly Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 6h18" /><path d="M4 6v13" /><path d="M20 19v-13" /><path d="M4 10h16" /><path d="M15 6v8a2 2 0 0 0 2 2h3" /></svg>
+                                Furniture Assembly<span class="accordion-description">Professional assembly of residential and office furniture, from single items to entire room setups.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>Expand or collapse section</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-neutral-800 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-neutral-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="desk-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Desks</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Standard (Writing):</span><span class="font-medium text-black">$50</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Standing or L-shaped:</span><span class="font-medium text-black">$75</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Executive / Complex:</span><span class="font-medium text-black">$100</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Furniture%20Assembly&item=Desk%20(Standard%2C%20Standing%2C%20L-Shaped%2C%20Executive)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="chair-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Chairs & Stools</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Basic (Dining, Stools):</span><span class="font-medium text-black">$25</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Office or Gaming:</span><span class="font-medium text-black">$50</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Furniture%20Assembly&item=Chair%20%2F%20Stool%20(Dining%2C%20Bar%2C%20Office%2C%20Gaming)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="bookshelf-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Bookshelves & Cabinets</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (2–3 shelves):</span><span class="font-medium text-black">$50</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium (4–6 shelves):</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (Wall units):</span><span class="font-medium text-black">$150</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Furniture%20Assembly&item=Bookshelf%20%2F%20Cabinet#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="dresser-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Dressers & Nightstands</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Nightstands:</span><span class="font-medium text-black">$40</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small Dressers (≤3 dr.):</span><span class="font-medium text-black">$60</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large Dressers (4+ dr.):</span><span class="font-medium text-black">$100</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Furniture%20Assembly&item=Dresser%20%2F%20Nightstand#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="shelving-unit-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Shelving Units</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Wall-mounted:</span><span class="font-medium text-black">$40</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Freeststanding:</span><span class="font-medium text-black">$80</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Modular Systems:</span><span class="font-medium text-black">$120</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Furniture%20Assembly&item=Shelving%20Unit%20(Wall-mounted%2C%20Freestanding%2C%20Modular)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 2: Product Assembly -->
+                    <div id="product-assembly-section" class="border border-neutral-700 rounded-lg bg-neutral-800 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-blue-400 bg-neutral-800 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 icon icon-tabler icon-tabler-puzzle" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="product-assembly-icon-title"><title id="product-assembly-icon-title">Product Assembly Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" /></svg>
+                                Product Assembly<span class="accordion-description">Assembly of home, office, fitness, and recreational products.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>Expand or collapse section</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-neutral-800 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-neutral-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="fitness-equipment-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Fitness Equipment</h4><ul class="space-y-2 text-neutral-700">
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (Benches, Bikes):</span><span class="font-medium text-black">$75</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium (Treadmills):</span><span class="font-medium text-black">$125</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (Multi-gym systems):</span><span class="font-medium text-black">$200</span></li>
+                        </ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Product%20Assembly&item=Fitness%20Equipment%20(Bench%2C%20Bike%2C%20Treadmill%2C%20Multi-Gym)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="playset-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Outdoor Playsets</h4><ul class="space-y-2 text-neutral-700">
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (Swings):</span><span class="font-medium text-black">$100</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium (Jungle gyms):</span><span class="font-medium text-black">$250</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (Full playsets):</span><span class="font-medium text-black">$400</span></li>
+                        </ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Product%20Assembly&item=Outdoor%20Playset%20(Swing%2C%20Jungle%20Gym%2C%20Full%20Playset)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="grill-patio-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Grills & Patio Furniture</h4><ul class="space-y-2 text-neutral-700">
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (Chairs, Side tables):</span><span class="font-medium text-black">$50</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium (Grills, Lounges):</span><span class="font-medium text-black">$100</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (Dining sets, Sectionals):</span><span class="font-medium text-black">$150</span></li>
+                        </ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Product%20Assembly&item=Grill%20%2F%20Patio%20Furniture#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="game-table-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Game Tables</h4><ul class="space-y-2 text-neutral-700">
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Foosball, Air Hockey:</span><span class="font-medium text-black">$75</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Ping Pong:</span><span class="font-medium text-black">$150</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Pool Tables:</span><span class="font-medium text-black">$250</span></li>
+                        </ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Product%20Assembly&item=Game%20Table%20(Foosball%2C%20Air%20Hockey%2C%20Ping%20Pong%2C%20Pool%20Table)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="basketball-hoop-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Basketball Hoops</h4><ul class="space-y-2 text-neutral-700">
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Wall-mounted:</span><span class="font-medium text-black">$100</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Portable:</span><span class="font-medium text-black">$200</span></li>
+                            <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; In-ground:</span><span class="font-medium text-black">$300</span></li>
+                        </ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Product%20Assembly&item=Basketball%20Hoop%20(Wall-mounted%2C%20Portable%2C%20In-ground)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="mounting-hanging-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Mounting & Wall Hanging</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; TV Mount (up to 55"):</span><span class="font-medium text-black">$75</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; TV Mount (55"+):</span><span class="font-medium text-black">$125</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Shelves, Art, Mirrors:</span><span class="font-medium text-black">$50</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Product%20Assembly&item=Mounting%20%26%20Wall%20Hanging%20(TV,%20Art,%20Shelves)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 3: Office Setup & Installation -->
+                    <div id="office-setup-section" class="border border-neutral-700 rounded-lg bg-neutral-800 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-blue-400 bg-neutral-800 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 icon icon-tabler icon-tabler-briefcase" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="office-setup-icon-title"><title id="office-setup-icon-title">Office Setup Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
+                                Office Setup & Installation<span class="accordion-description">Complete office furniture and workspace installations.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>Expand or collapse section</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-neutral-800 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-neutral-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                        <div id="desk-setup-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Desk Setup</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Standard/Ergonomic:</span><span class="font-medium text-black">$50</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Modular/Corner:</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Ergonomic Chairs:</span><span class="font-medium text-black">$25 – $50</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Office%20Setup%20%26%20Installation&item=Desk%20Setup%20%28Standard%2C%20Ergonomic%2C%20Modular%29#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                        <div id="conference-table-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Conference Table Setup</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (4-6 seats):</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (8+ seats, Cable Management):</span><span class="font-medium text-black">$300</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Office%20Setup%20%26%20Installation&item=Conference%20Table%20Setup#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                        <div id="workspace-org-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Workspace Organization</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Basic Layout:</span><span class="font-medium text-black">$50</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Full Configuration/Storage:</span><span class="font-medium text-black">$150</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Office%20Setup%20%26%20Installation&item=Workspace%20Organization#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                        <div id="cubicle-install-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Cubicle Installation</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Custom Pricing</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Office%20Setup%20%26%20Installation&item=Cubicle%20Installation#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 4: Home Furniture Installation -->
+                    <div id="home-furniture-section" class="border border-neutral-700 rounded-lg bg-neutral-800 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-blue-400 bg-neutral-800 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 icon icon-tabler icon-tabler-bed" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-labelledby="home-furniture-icon-title"><title id="home-furniture-icon-title">Home Furniture Icon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7v11m0 -4h18m0 4v-8a2 2 0 0 0 -2 -2h-8v6" /><path d="M7 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /></svg>
+                                Home Furniture Installation<span class="accordion-description">Assembly of key furniture pieces for living spaces.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>Expand or collapse section</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-neutral-800 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-neutral-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="bed-frame-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Bed Frames</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Twin/Full:</span><span class="font-medium text-black">$75</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Queen/King:</span><span class="font-medium text-black">$150</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Bunk/Storage Beds:</span><span class="font-medium text-black">$200</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Home%20Furniture%20Installation&item=Bed%20Frame%20(All%20sizes)#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="dining-set-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Dining Sets</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (2-4 seats):</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium (4-6 seats):</span><span class="font-medium text-black">$175</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (8+ seats):</span><span class="font-medium text-black">$250</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Home%20Furniture%20Installation&item=Dining%20Set#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="sofa-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Sofas/Recliners</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Loveseats:</span><span class="font-medium text-black">$75</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Standard/Recliner:</span><span class="font-medium text-black">$125</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Sectionals/Sleepers:</span><span class="font-medium text-black">$200</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Home%20Furniture%20Installation&item=Sofa%20%2F%20Sectional%20%2F%20Recliner#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="wardrobe-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Wardrobes/Closets</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Freestanding:</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Built-in/Modular:</span><span class="font-medium text-black">$300</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Home%20Furniture%20Installation&item=Wardrobe%20%2F%20Closet%20System#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="entertainment-center-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Entertainment Centers</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Basic TV Stand:</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large Console & Fireplace:</span><span class="font-medium text-black">$150</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Wall-mounted/Custom:</span><span class="font-medium text-black">$175</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Home%20Furniture%20Installation&item=Entertainment%20Center%20%2F%20TV%20Stand#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="home-bookshelves" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Bookshelves/Storage Units</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Basic:</span><span class="font-medium text-black">$50</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium:</span><span class="font-medium text-black">$100</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Custom/Modular:</span><span class="font-medium text-black">$150+</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Home%20Furniture%20Installation&item=Bookshelves%20%2F%20Storage%20Unit#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 5: Outdoor & Specialty Installations -->
+                    <div id="outdoor-specialty-section" class="border border-neutral-700 rounded-lg bg-neutral-800 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-blue-400 bg-neutral-800 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 icon icon-tabler icons-tabler-outline icon-tabler-sun"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
+                                Outdoor & Specialty Installations<span class="accordion-description">Assembly of outdoor structures and specialty equipment.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>Expand or collapse section</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-neutral-800 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-neutral-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                        <div id="pergolas-gazebos-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Pergolas & Gazebos</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small:</span><span class="font-medium text-black">$250</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium:</span><span class="font-medium text-black">$500</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large/Deluxe:</span><span class="font-medium text-black">$800</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Outdoor%20%26%20Specialty%20Installations&item=Pergola%20%2F%20Gazebo#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                        <div id="swings-hammocks-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Swings & Hammocks</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Basic Hanging Units:</span><span class="font-medium text-black">$75</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Full Swing Sets or Hammocks:</span><span class="font-medium text-black">$100 – $200</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Outdoor%20%26%20Specialty%20Installations&item=Swing%20%2F%20Hammock#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                        <div id="garden-sheds-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Garden Sheds</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Small (≤6x6 ft):</span><span class="font-medium text-black">$200</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Medium (6x8–8x10 ft):</span><span class="font-medium text-black">$400</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Large (10x12+ ft):</span><span class="font-medium text-black">$600</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Outdoor%20%26%20Specialty%20Installations&item=Garden%20Shed#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                        <div id="bike-racks-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Bike Racks & Storage</h4><ul class="space-y-2 text-neutral-700"><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Wall-mounted or Tool Racks:</span><span class="font-medium text-black">$50</span></li><li class="grid grid-cols-[1fr_auto] items-baseline gap-x-4"><span>&bull; Freestanding Systems:</span><span class="font-medium text-black">$100 – $150</span></li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Outdoor%20%26%20Specialty%20Installations&item=Bike%20Rack%20%2F%20Storage%20Solution#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Category 6: Custom Assembly Solutions -->
+                    <div id="custom-solutions-section" class="border border-neutral-700 rounded-lg bg-neutral-800 mb-4">
+                        <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-xl text-blue-400 bg-neutral-800 rounded-lg transition-colors duration-300">
+                            <span class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
+                                Custom Assembly Solutions<span class="accordion-description">Tailored services for unique or high-volume projects.</span>
+                            </span>
+                            <svg class="chevron w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>Expand or collapse section</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="accordion-content overflow-hidden max-h-0 transition-max-height duration-300 ease-in-out bg-neutral-800 rounded-b-lg">
+                            <div class="p-5 md:p-8 text-neutral-300">
+                                
+                                <div class="flex flex-wrap gap-6 justify-center">
+                                    <div id="specialized-furniture-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Specialized Furniture</h4><ul class="list-disc list-inside space-y-2 text-neutral-700 text-left"><li>Assembly for custom, antique, or highly complex pieces.</li><li>Custom Pricing</li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Custom%20Assembly%20Solutions&item=Specialized%20Furniture%20Project#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="large-scale-installations-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Large-Scale Installations</h4><ul class="list-disc list-inside space-y-2 text-neutral-700 text-left"><li>Full office setups, commercial displays, or multi-unit residential projects.</li><li>Custom Pricing</li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Custom%20Assembly%20Solutions&item=Large-Scale%20Installation%20Project#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="on-site-modifications-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">On-Site Modifications</h4><ul class="list-disc list-inside space-y-2 text-neutral-700 text-left"><li>Custom adjustments, hardware changes, or stability enhancements.</li><li>Custom Pricing</li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Custom%20Assembly%20Solutions&item=On-Site%20Modification%20%2F%20Adjustment#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                    <div id="design-based-builds-card" class="w-full max-w-sm bg-white p-6 rounded-lg shadow-xl  transition-transform transition-colors duration-300 ease-in-out border-t-2 border-transparent hover:scale-105 hover:border-blue-400 flex flex-col"><div class="flex-grow"><h4 class="font-bold text-lg text-blue-400 mb-3 text-center">Design-Based Builds</h4><ul class="list-disc list-inside space-y-2 text-neutral-700 text-left"><li>Working from custom plans or designs to assemble unique items.</li><li>Custom Pricing</li></ul></div><div class="mt-4 pt-4 border-t border-neutral-200 text-center"><a href="contact.html?service=Custom%20Assembly%20Solutions&item=Custom%20Design%20Build#contact-section" class="inline-flex items-center text-sm font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-300 group">Make an Inquiry <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Arrow pointing right</title><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg></a></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Information Section -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">Service Information</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-4 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" /><circle cx="18" cy="18" r="4" /><path d="M15 3v4" /><path d="M7 3v4" /><path d="M3 11h16" /><path d="M18 16.496v1.504l1 1" /></svg>
+                        <h4 class="font-bold text-xl text-blue-400">Flexible Scheduling</h4>
+                        <p class="text-neutral-600 mt-3 text-base">Appointments are available on evenings and weekends to accommodate your busy schedule.</p>
+                    </div>
+                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-4 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="11" r="3" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+                        <h4 class="font-bold text-xl text-blue-400">Service Area</h4>
+                        <p class="text-neutral-600 mt-3 text-base">We proudly serve all of North Carolina. A travel fee may apply for locations outside our standard service radius.</p>
+                    </div>
+                    <div class="bg-white rounded-lg px-6 py-12 shadow-xl border-t-4 border-transparent hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-4 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="5" width="18" height="14" rx="3" /><line x1="3" y1="10" x2="21" y2="10" /><line x1="7" y1="15" x2="7.01" y2="15" /><line x1="11" y1="15" x2="13" y2="15" /></svg>
+                        <h4 class="font-bold text-xl text-blue-400">Payment Methods</h4>
+                        <p class="text-neutral-600 mt-3 text-base">We accept cash, check, Apple Pay, PayPal, and Zelle. A service deposit is required, and full payment is due upon completion of the service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-neutral-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-white">Ready to get started?</h2>
+                <p class="text-xl mt-4 mb-8 text-neutral-300">Let us handle the hassle. Get a free, no-obligation quote today.</p>
+                <a href="./contact.html" class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300">
+                    Get a Free Quote
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-neutral-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider">About Us</h3>
+                    <div class="mt-4 flex items-start">
+                        <img src="./img/transparent_full.png" alt="Properly Assembled Logo" class="h-12 mr-4 flex-shrink-0">
+                        <p class="text-neutral-300 text-sm">
+                            Properly Assembled is your trusted partner for professional assembly and installation services in North Carolina. We focus on precision, safety, and efficiency—whether it’s home furniture, office setups, or outdoor structures. Every project is built with care and attention to detail, backed by flexible scheduling and quality assurance.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="./index.html" class="hover:text-blue-400">Home</a></li>
+                        <li><a href="./services.html" class="hover:text-blue-400">Services</a></li>
+                        <li><a href="./gallery.html" class="hover:text-blue-400">Gallery</a></li>
+                        <li><a href="./rentals.html" class="hover:text-blue-400">Rentals</a></li>
+                        <li><a href="./contact.html" class="hover:text-blue-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider">Contact Info</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><span class="font-semibold text-neutral-300">Email:</span> <a href="mailto:demo@example.com" class="hover:text-blue-400">demo@example.com</a></li>
+                        <li><span class="font-semibold text-neutral-300">Phone:</span> <a href="tel:5551234567" class="hover:text-blue-400">(555) 123-4567</a></li>
+                        <li><span class="font-semibold text-neutral-300">Service Area:</span> Servicing all of North Carolina</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-slate-700 pt-8 text-center text-neutral-500">
+                <p>&copy; 2025 Properly Assembled. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .highlight-pop {
+            transform: scale(1.05);
+            border-color: #38bdf8; /* Corresponds to sky-400 */
+        }
+        .video-background {
+            transition: opacity 1.5s ease-in-out;
+            opacity: 0;
+        }
+        .video-background.active {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle scrolling to a specific card and triggering the animation
+            const urlParams = new URLSearchParams(window.location.search);
+            const scrollToCardId = urlParams.get('scrollToCard');
+            const serviceSectionId = urlParams.get('service');
+
+            if (scrollToCardId) {
+                const cardElement = document.getElementById(scrollToCardId);
+                if (cardElement) {
+                    const accordionContent = cardElement.closest('.accordion-content');
+                    if (accordionContent) {
+                        const accordionHeader = accordionContent.previousElementSibling;
+                        // Open the accordion if it's closed
+                        if (accordionHeader && accordionHeader.classList.contains('accordion-header')) {
+                            const icon = accordionHeader.querySelector('svg');
+                            if (accordionContent.style.maxHeight) {
+                                // It's open, do nothing
+                            } else {
+                                // It's closed, open it
+                                accordions.forEach(acc => {
+                                    acc.nextElementSibling.style.maxHeight = null;
+                                    acc.querySelector('svg').classList.remove('rotate-180');
+                                });
+                                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                                if (icon) {
+                                    icon.classList.add('rotate-180');
+                                }
+                            }
+                        }
+                    }
+
+                    // Scroll to the card and trigger animation
+                    setTimeout(() => {
+                        cardElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        cardElement.classList.add('scale-105', 'border-blue-400');
+                        setTimeout(() => {
+                            cardElement.classList.remove('scale-105', 'border-blue-400');
+                        }, 1500); // Animation duration
+                    }, 300); // Delay to allow accordion to open
+                }
+            } else if (serviceSectionId) {
+                // Fallback for older links to just open the section
+                const section = document.getElementById(serviceSectionId);
+                if (section) {
+                    const accordionHeader = section.querySelector('.accordion-header');
+                    if (accordionHeader) {
+                        accordionHeader.click();
+                        setTimeout(() => {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300);
+                    }
+                }
+            }
+
+            const accordions = document.querySelectorAll('.accordion-header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('is-open');
+                });
+            }
+
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            const popularServiceLinks = document.querySelectorAll('.popular-service-link');
+
+            // Function to handle opening/closing of accordion sections
+            const toggleAccordion = (button) => {
+                const content = button.nextElementSibling;
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                // Close all other accordions
+                accordionButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherButton.classList.remove('open');
+                        otherButton.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // Toggle the clicked accordion
+                if (!isExpanded) {
+                    button.setAttribute('aria-expanded', 'true');
+                    button.classList.add('open');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    button.setAttribute('aria-expanded', 'false');
+                    button.classList.remove('open');
+                    content.style.maxHeight = null;
+                }
+            };
+
+            // Add click listeners to accordion buttons
+            accordionButtons.forEach(button => {
+                button.setAttribute('aria-expanded', 'false'); // Initialize
+                button.addEventListener('click', () => toggleAccordion(button));
+            });
+
+            // Background video switcher
+            const videos = document.querySelectorAll('.video-background');
+            let currentVideoIndex = 0;
+            const videoInterval = 10000; // 10 seconds per video
+
+            if (videos.length > 1) {
+                // Ensure first video is playing
+                videos[currentVideoIndex].play().catch(e => console.error("Video play failed", e));
+
+                setInterval(() => {
+                    // Fade out current video
+                    videos[currentVideoIndex].classList.remove('active');
+
+                    // Move to next video index
+                    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+
+                    // Fade in next video
+                    const nextVideo = videos[currentVideoIndex];
+                    nextVideo.classList.add('active');
+                    nextVideo.currentTime = 0; // Restart video
+                    nextVideo.play().catch(e => console.error("Video play failed", e));
+                }, videoInterval);
+            }
+
+            function handleLink(targetSectionId, targetCardId) {
+                const targetSection = document.getElementById(targetSectionId);
+                if (!targetSection) return;
+
+                const accordionButton = targetSection.querySelector('.accordion-button');
+                if (accordionButton) {
+                    const isAlreadyOpen = accordionButton.getAttribute('aria-expanded') === 'true';
+
+                    // Function to scroll and highlight
+                    const scrollAndHighlight = () => {
+                        const isMobile = window.innerWidth < 768;
+
+                        // If no specific card is targeted (e.g., navigating from another page),
+                        // scroll to the top of the section, just under the sticky header.
+                        if (!targetCardId) {
+                            const header = document.querySelector('header.sticky');
+                            const headerHeight = header ? header.offsetHeight : 0;
+                            const elementPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+                            const targetScrollY = elementPosition - headerHeight;
+
+                            window.scrollTo({
+                                top: targetScrollY,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // If a specific card IS targeted, use the existing centering logic.
+                            if (isMobile) {
+                                const elementToCenter = document.getElementById(targetCardId);
+                                if (elementToCenter) {
+                                    const header = document.querySelector('header.sticky');
+                                    const headerHeight = header ? header.offsetHeight : 0;
+                                    const elementPosition = elementToCenter.getBoundingClientRect().top + window.pageYOffset;
+                                    const elementHeight = elementToCenter.offsetHeight;
+                                    const viewportHeight = window.innerHeight;
+                                    const targetScrollY = elementPosition + (elementHeight / 2) - (viewportHeight / 2) - (headerHeight / 2);
+
+                                    window.scrollTo({
+                                        top: targetScrollY,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            } else {
+                                targetSection.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'center'
+                                });
+                            }
+                        }
+
+                        // Highlight the card if a specific card is targeted
+                        if (targetCardId) {
+                            const targetCard = document.getElementById(targetCardId);
+                            if (targetCard) {
+                                const highlightDelay = isMobile ? 500 : 150;
+                                setTimeout(() => {
+                                    targetCard.classList.add('highlight-pop');
+                                    setTimeout(() => {
+                                        targetCard.classList.remove('highlight-pop');
+                                    }, 1200);
+                                }, highlightDelay);
+                            }
+                        }
+                    };
+
+                    if (isAlreadyOpen) {
+                        // If it's already open, just scroll into view.
+                        scrollAndHighlight();
+                    } else {
+                        // If it's closed, open it first.
+                        toggleAccordion(accordionButton);
+                        // Then wait for the open animation to complete before scrolling.
+                        setTimeout(scrollAndHighlight, 300); // Must match CSS transition time
+                    }
+                }
+            }
+
+            // Handle hash on page load
+            // Add click listeners to popular service links on this page
+            popularServiceLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetSectionId = this.getAttribute('href').substring(1);
+                    const targetCardId = this.dataset.targetCard.substring(1);
+                    handleLink(targetSectionId, targetCardId);
+                });
+            });
+
+            function processLink() {
+                const params = new URLSearchParams(window.location.search);
+                const serviceId = params.get('service');
+
+                if (serviceId) {
+                    // Handle query parameter from index.html
+                    handleLink(serviceId, null);
+                    // Clean the URL
+                    const newUrl = window.location.pathname;
+                    history.replaceState({}, '', newUrl);
+                } else if (window.location.hash) {
+                    // Handle hash links from gallery.html or in-page links
+                    const hash = window.location.hash.substring(1);
+                    let sectionId, cardId;
+
+                    if (hash.includes('&')) {
+                        [sectionId, cardId] = hash.split('&');
+                    } else {
+                        sectionId = hash;
+                        cardId = null; // No card specified
+                    }
+
+                    if (sectionId) {
+                        handleLink(sectionId, cardId);
+                    }
+                }
+            }
+
+            // Process link on initial page load
+            window.addEventListener('load', processLink);
+
+            // Process link on hash change (for in-page navigation)
+            window.addEventListener('hashchange', processLink, false);
+        });
+    </script>
+</body>
+</html>

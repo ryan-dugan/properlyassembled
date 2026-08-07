@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals - Properly Assembled</title>
+    <meta name="description" content="Rent high-quality tents for your events. We handle delivery, assembly, and disassembly, so you can focus on your guests.">
+    <link rel="icon" href="./img/transparent_icon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-ibm-plex {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            background-color: #171717; /* bg-neutral-900 */
+        }
+        #mobile-menu.is-open {
+            max-height: 20rem; /* 320px, adjust if needed */
+        }
+        .rental-card {
+            position: relative;
+        }
+        .rental-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            border-top-left-radius: 0.5rem; /* Corresponds to rounded-lg */
+            border-top-right-radius: 0.5rem; /* Corresponds to rounded-lg */
+        }
+        .rental-card:hover::after {
+            background-color: #3b82f6; /* Tailwind's blue-500 */
+        }
+        .inventory-container {
+            background: radial-gradient(ellipse at center, #6b6b6b, #303030); /* blue-900 to gray-900 */
+        }
+        .header-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .header-underline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -0.75rem; /* Corresponds to -mb-3 */
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #3b82f6; /* blue-500 */
+            transition: width 0.5s ease-in-out;
+        }
+        .in-view .header-underline::after {
+            width: 100%;
+        }
+        .rental-card-container {
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .rental-card-container:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-neutral-400">
+
+    <!-- Header / Navigation -->
+    <header class="bg-neutral-800 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="./index.html">
+                <img src="./img/transparent_full.png" alt="Properly Assembled Logo" class="h-12">
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="./index.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Home</a>
+                <a href="./services.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Services</a>
+                <a href="./gallery.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Gallery</a>
+                <a href="./rentals.html" class="text-blue-400 font-bold">Rentals</a>
+                <a href="./contact.html" class="text-neutral-300 hover:text-blue-400 font-semibold">Contact</a>
+            </div>
+            <a href="./contact.html" class="hidden md:block bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
+                Get a Free Quote
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-neutral-300">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mobile-menu-icon-title"><title id="mobile-menu-icon-title">Open Main Menu</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden">
+            <div class="px-6 pt-2 pb-4">
+            <a href="./index.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Home</a>
+            <a href="./services.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Services</a>
+            <a href="./gallery.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Gallery</a>
+            <a href="./rentals.html" class="block text-blue-400 py-2 font-bold">Rentals</a>
+            <a href="./contact.html" class="block text-neutral-300 hover:text-blue-400 py-2 font-semibold">Contact</a>
+            <a href="./contact.html" class="block mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 text-center">
+                Get a Free Quote
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-neutral-900 text-white bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1520869562321-370873f73964?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="bg-neutral-900 bg-opacity-60">
+                <div class="container mx-auto px-6 py-16 text-center">
+                    <h1 class="header-underline text-4xl md:text-5xl font-bold leading-tight text-white">Event & Project Rentals</h1>
+                    <p class="text-lg md:text-xl mt-4 text-neutral-300 max-w-3xl mx-auto">High-quality tents and equipment for any occasion, delivered and set up with care.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="bg-cover bg-center" style="background-image: url('./img/tent.jpg');">
+            <div class="bg-black bg-opacity-60 py-32">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white leading-tight">Reliable Rentals for Your Next Event or Project</h2>
+                    <div class="w-24 h-1 bg-blue-500 mt-6 mb-8 mx-auto"></div>
+                    <div class="text-lg text-neutral-200 space-y-4 max-w-3xl mx-auto">
+                        <p>Properly Assembled now offers high-quality rental equipment for parties, gatherings, and special occasions. Whether you’re hosting a backyard celebration or planning a large-scale event, we provide dependable gear delivered and set up with care.</p>
+                        <p>Our rental catalog is always growing, so check back often for new additions to make your next event perfect.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Rentals Section -->
+        <section class="py-24 bg-neutral-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white">Available Rentals</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mt-6 mb-12"></div>
+                </div>
+                <div class="space-y-16">
+                    <!-- Current Inventory Section -->
+                    <div class="inventory-container p-10 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-12">Current Inventory</h3>
+                        <div class="space-y-16 max-w-4xl mx-auto">
+                            <!-- Party Tent Card -->
+                            <div class="rental-card-container">
+                                <div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col md:flex-row">
+                                    <img src="img/tent_card.jpg" alt="Party Tent" class="w-full md:w-3/5">
+                                    <div class="p-10 flex flex-col justify-center text-center md:w-2/5">
+                                        <h4 class="font-bold text-3xl text-neutral-800 mb-4">Party Tents</h4>
+                                        <div class="w-12 h-0.5 bg-blue-500 mx-auto mt-4 mb-6"></div>
+                                        <p class="text-neutral-600 text-xl leading-relaxed mb-8">Available in multiple sizes to fit any space, with setup and takedown included to keep things simple.</p>
+                                        <a href="#booking" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'center' });" class="inline-block bg-blue-500 text-white font-semibold px-8 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300 mx-auto">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Coming Soon Card -->
+                            <div class="rental-card-container">
+                                <div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-center p-12 text-center h-full">
+                                    <svg class="w-16 h-16 text-neutral-400 mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
+                                    <h3 class="text-3xl font-bold text-neutral-700 mb-4">More Great Items on the Way!</h3>
+                                    <p class="text-neutral-500 text-lg">We're working hard to expand our inventory with more high-quality rental options. Check back soon!</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-24 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white">How It Works</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mt-6 mb-16"></div>
+                </div>
+                <div class="relative">
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-neutral-700 -translate-y-1/2"></div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center relative">
+                        <div class="bg-neutral-800 p-8 rounded-lg border-t-4 border-blue-500 shadow-xl">
+                            <div class="text-3xl font-bold text-blue-400 mb-4">1</div>
+                            <h3 class="text-xl font-bold text-white mb-2">Browse Rentals</h3>
+                            <p class="text-neutral-300">Check our available items and choose what fits your event or project.</p>
+                        </div>
+                        <div class="bg-neutral-800 p-8 rounded-lg border-t-4 border-blue-500 shadow-xl">
+                            <div class="text-3xl font-bold text-blue-400 mb-4">2</div>
+                            <h3 class="text-xl font-bold text-white mb-2">Request a Quote</h3>
+                            <p class="text-neutral-300">Use the contact form or call us to get pricing and availability.</p>
+                        </div>
+                        <div class="bg-neutral-800 p-8 rounded-lg border-t-4 border-blue-500 shadow-xl">
+                            <div class="text-3xl font-bold text-blue-400 mb-4">3</div>
+                            <h3 class="text-xl font-bold text-white mb-2">Delivery & Setup</h3>
+                            <p class="text-neutral-300">We handle transport, setup, and breakdown—so you don’t have to.</p>
+                        </div>
+                        <div class="bg-neutral-800 p-8 rounded-lg border-t-4 border-blue-500 shadow-xl">
+                            <div class="text-3xl font-bold text-blue-400 mb-4">4</div>
+                            <h3 class="text-xl font-bold text-white mb-2">Enjoy & Return</h3>
+                            <p class="text-neutral-300">Use the rental for your event, and we’ll pick it up after. Easy and hassle-free.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policies Section -->
+        <section class="py-24 bg-neutral-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white">Policies & Requirements</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto mt-6 mb-12"></div>
+                </div>
+                <div class="max-w-4xl mx-auto bg-neutral-800 p-10 rounded-lg shadow-2xl">
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4"><svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg><div><strong class="text-white text-lg">Rental Periods:</strong><span class="block text-neutral-300">Daily and weekend rates available.</span></div></li>
+                        <li class="flex items-start gap-4"><svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm0,22c-5.514,0-10-4.486-10-10S6.486,2,12,2s10,4.486,10,10-4.486,10-10,10Zm4-8c0,1.654-1.346,3-3,3v1c0,.553-.447,1-1,1s-1-.447-1-1v-1h-.268c-1.067,0-2.063-.574-2.598-1.499-.277-.479-.113-1.09,.364-1.366,.479-.279,1.091-.113,1.366,.364,.179,.31,.511,.501,.867,.501h2.268c.552,0,1-.448,1-1,0-.378-.271-.698-.644-.76l-3.041-.507c-1.342-.223-2.315-1.373-2.315-2.733,0-1.654,1.346-3,3-3v-1c0-.552,.447-1,1-1s1,.448,1,1v1h.268c1.067,0,2.063,.575,2.598,1.5,.277,.478,.113,1.089-.364,1.366-.48,.277-1.091,.113-1.366-.365-.179-.309-.511-.5-.867-.5h-2.268c-.552,0-1,.449-1,1,0,.378,.271,.698,.644,.76l3.041,.507c1.342,.223,2.315,1.373,2.315,2.733Z" /></svg><div><strong class="text-white text-lg">Deposit:</strong><span class="block text-neutral-300">A service deposit is required, and full payment is due upon completion of the service.</span></div></li>
+                        <li class="flex items-start gap-4"><svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path></svg><div><strong class="text-white text-lg">Cancellations:</strong><span class="block text-neutral-300">No-fee cancellations up to 48 hours in advance.</span></div></li>
+                        <li class="flex items-start gap-4"><svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><div><strong class="text-white text-lg">Delivery Area:</strong><span class="block text-neutral-300">Currently serving all of North Carolina.</span></div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included Section -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">What's Included</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+                <div class="max-w-2xl mx-auto">
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Full delivery and transportation of the tent to your event location.</span></li>
+                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Professional and safe assembly by our experienced team.</span></li>
+                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Secure anchoring on grass, pavement, or decks.</span></li>
+                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Timely disassembly and removal after your event concludes.</span></li>
+                        <li class="flex items-start"><svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Optional sidewalls and lighting available upon request.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-20 bg-neutral-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">Book Your Rental Today</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+                <p class="text-center max-w-2xl mx-auto text-lg mb-8">Ready to book? Select a date and time below that works for you. We'll email you to confirm the details and provide a final quote.</p>
+                
+                <!-- Booking calendar disabled in this demo build (was a live Calendly integration) -->
+                <div class="flex flex-col items-center justify-center text-center bg-neutral-800 border border-dashed border-neutral-600 rounded-lg" style="min-width:320px;height:700px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-neutral-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" role="img" aria-labelledby="calendarPlaceholderIconRentals">
+                        <title id="calendarPlaceholderIconRentals">Calendar Icon</title>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 18.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6.75a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5Z" />
+                    </svg>
+                    <p class="text-neutral-400 max-w-sm">Booking calendar disabled in this demo. On the live site, this embeds a scheduling widget.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-neutral-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider">About Us</h3>
+                    <div class="mt-4 flex items-start">
+                        <img src="./img/transparent_full.png" alt="Properly Assembled Logo" class="h-12 mr-4 flex-shrink-0">
+                        <p class="text-neutral-300 text-sm">
+                            Properly Assembled is your trusted partner for professional assembly and installation services in North Carolina. We focus on precision, safety, and efficiency—whether it’s home furniture, office setups, or outdoor structures. Every project is built with care and attention to detail, backed by flexible scheduling and quality assurance.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider">Quick Links</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="./index.html" class="hover:text-blue-400">Home</a></li>
+                        <li><a href="./services.html" class="hover:text-blue-400">Services</a></li>
+                        <li><a href="./gallery.html" class="hover:text-blue-400">Gallery</a></li>
+                        <li><a href="./rentals.html" class="hover:text-blue-400">Rentals</a></li>
+                        <li><a href="./contact.html" class="hover:text-blue-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider">Contact Info</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><span class="font-semibold text-neutral-300">Email:</span> <a href="mailto:demo@example.com" class="hover:text-blue-400">demo@example.com</a></li>
+                        <li><span class="font-semibold text-neutral-300">Phone:</span> <a href="tel:5551234567" class="hover:text-blue-400">(555) 123-4567</a></li>
+                        <li><span class="font-semibold text-neutral-300">Service Area:</span> Servicing all of North Carolina</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-slate-700 pt-8 text-center text-neutral-500">
+                <p>&copy; 2025 Properly Assembled. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const headers = document.querySelectorAll('.header-underline');
+        headers.forEach(header => observer.observe(header));
+
+
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('is-open');
+        });
+    </script>
+
+</body>
+</html>
